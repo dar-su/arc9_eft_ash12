@@ -1,0 +1,39 @@
+ATT.PrintName = "ASh-12 rear sight carry handle"
+ATT.CompactName = "ASh-12 Ca"
+ATT.Icon = Material("entities/eft_axmc_attachments/barrel.png", "mips smooth")
+ATT.Description = [[Detachable Carry Handle with a rear sight for ASh-12.]]
+
+-- ATT.HasBarrel = true 
+
+-- ATT.EFTErgoAdd = -18
+-- ATT.CustomCons = { Ergonomics = "-18" }
+-- ATT.RecoilMult = 0.95
+-- ATT.VisualRecoilMult = 0.95
+-- ATT.PhysBulletMuzzleVelocityMult = 1.056
+
+ATT.ActivateElements = {"IronsBlockingSight"}
+
+ATT.Sights = {
+    {
+        Pos = Vector(0, 7.5, -1.9),
+        Ang = Angle(0, 0, 0),
+        Magnification = 1.1,
+        IsIronSight = true
+    }
+}
+
+ATT.Attachments = {
+    {
+        PrintName = "Optic",
+        Category = {"eft_optic_large", "eft_optic_small", "eft_optic_medium"},
+        Pos = Vector(-0.2, 0, -1.7),
+        --Pos = Vector(0, 0, 0),
+        Ang = Angle(0, 0, 0),
+        Icon_Offset = Vector(0, 0, 0.2),
+    },
+}
+
+ATT.SortOrder = 0
+ATT.MenuCategory = "ARC9 - EFT Attachments"
+
+ATT.Category = {"eft_as12_rs"}
