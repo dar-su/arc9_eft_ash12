@@ -65,13 +65,13 @@ SWEP.RecoilSide = 0.7
 SWEP.RecoilRandomUp = 0.9
 SWEP.RecoilRandomSide = 0
 
-SWEP.ViewRecoil = true
+SWEP.ViewRecoil = false 
 SWEP.ViewRecoilUpMult = 40
 SWEP.ViewRecoilUpMultMultHipFire = 2
 SWEP.ViewRecoilSideMult = -4
 SWEP.ViewRecoilSideMultMultHipFire = -2
 
-SWEP.RecoilDissipationRate = 11
+SWEP.RecoilDissipationRate = 5
 SWEP.RecoilAutoControl = 10
 SWEP.RecoilResetTime = 0.05
 
@@ -102,10 +102,7 @@ SWEP.RecoilKickDamping = 10
 
 --          Heating
 
-SWEP.Overheat = true
-SWEP.HeatCapacity = 90
-SWEP.HeatDissipation = 6
-SWEP.HeatLockout = false
+SWEP.Overheat = false
 
 
 --          Firemodes
@@ -399,9 +396,8 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
         -- swep.nextspin = true
         spindelay(swep)
     elseif anim == "reload_start" then  
+        swep.roundcount = swep.roundcount or 5
         if clip != 0 or swep:GetValue("EFTForceFastReload") then 
-            swep.roundcount = swep.roundcount or 5
-            
             local cunt = (5 - (swep.roundcount - clip)) -- crazy fuck
             if clip > 0 and swep.roundcount > 0 and swep.roundcount < 5 and clip != swep.roundcount then -- crazy fuck
                 cunt = (5-clip) .. "_offset" .. (5 - swep.roundcount) -- crazy fuck
