@@ -172,8 +172,8 @@ SWEP.IronSights = {
 SWEP.ActivePos = Vector(-0.7, -3.1, -.35)
 SWEP.ActiveAng = Angle(0, 0, 0)
 
-SWEP.SprintAng = Angle(50, 10, -45)
-SWEP.SprintPos = Vector(4, -5, 0)
+SWEP.SprintAng = Angle(0, 20.6,  -15.2)
+SWEP.SprintPos = Vector(0.5, -5.1, -13.5)
 
 SWEP.NearWallAng = Angle(0, 55, 0)
 SWEP.NearWallPos = Vector(0, 0, -15)
@@ -360,54 +360,40 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
     if anim == "idle" then   
         if swep.nocylrot then swep.nocylrot = nil end
         if swep.fistful then swep.fistful = nil end
-        
-        if swep.nextspin then
-            local getcr = swep:GetNWInt("EFTRevolverCylRot", 0) + 1
-            if getcr==5 then getcr = 0 end
-            swep:SetNWInt("EFTRevolverCylRot", getcr)
-            swep.nextspin = nil
-        end
     elseif anim == "ready" or anim == "draw" then   
         anim = "draw"
-        timer.Simple(0.1, function() -- wah wah
-            if IsValid(swep) then
-                swep:SetLoadedRounds(swep:Clip1())
-            end
-        end)
+        timer.Simple(0.1, function() if IsValid(swep) then swep:SetLoadedRounds(swep:Clip1()) end end) -- wah wah
     elseif anim == "fire" then
         if sa then
             anim = "fire_sa"
         else
             anim = "fire_da"
-            swep.nextspin = true
+            spindelay(swep)
         end
     elseif anim == "dryfire" then
         if sa then
             anim = "fire_dry"
-            -- swep.nextspin = true
             spindelay(swep)
         else
             anim = "fire_da_dry"
-            -- swep.nextspin = true
             spindelay(swep)
         end
     elseif anim == "cycle" and SERVER then
         anim = "cycle"
-        -- swep.nextspin = true
         spindelay(swep)
     elseif anim == "reload_start" then  
         swep.roundcount = swep.roundcount or 5
-        if clip != 0 or swep:GetValue("EFTForceFastReload") then 
+        if clip == 0 or swep:GetValue("EFTForceFastReload") then 
+            anim = "fistful_start" .. swep.roundcount
+            swep.fistful = true
+            swep:SetClip1(0) -- animation.DumpAmmo unloads LoadedRounds too
+        else            
             local cunt = (5 - (swep.roundcount - clip)) -- crazy fuck
             if clip > 0 and swep.roundcount > 0 and swep.roundcount < 5 and clip != swep.roundcount then -- crazy fuck
                 cunt = (5-clip) .. "_offset" .. (5 - swep.roundcount) -- crazy fuck
             end
 
             anim = "sg_reload_start" .. cunt
-        else
-            anim = "fistful_start" .. swep.roundcount
-            swep.fistful = true
-            swep:SetClip1(0) -- animation.DumpAmmo unloads LoadedRounds too
         end
 
         swep.afterreloadstart = true
@@ -438,10 +424,8 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
         anim = swep.fistful and "fistful_end_r" .. clip or "sg_reload_end"
         swep:SetNWInt("EFTRevolverCylRot", 0)
         swep.nocylrot = true
-        -- if swep.fistful then
-            swep.roundcount = clip
-            swep:SetNWInt("EFTRevolverRoundCount", clip)
-        -- end
+        swep.roundcount = clip
+        swep:SetNWInt("EFTRevolverRoundCount", clip)
     end
     
     if !swep.nocylrot then
@@ -460,10 +444,19 @@ local pouchout = {"arc9_eft_shared/generic_mag_pouch_out1.wav","arc9_eft_shared/
 local switchi = { { s = {"arc9_eft_shared/weapon_light_switcher1.wav", "arc9_eft_shared/weapon_light_switcher2.wav", "arc9_eft_shared/weapon_light_switcher3.wav"}, t = 0 } }
 
 local magcheck = {
-    { s = randspin, t = 0.2 },
+    { s = randspin, t = 0 },
+    { s = path .. "rhino_drum_releasebutton.wav", t = 0.05 },
+    { s = path .. "rsh_12_reload_start.wav", t = 4/24 },
+    { s = randspin, t = 35/24 },
+    { s = path .. "rsh_12_reload_end.wav", t = 49/24 },
+    { s = randspin, t = 63/24 },
 }
 local look = {
-    { s = randspin, t = 0.2 },
+    { s = randspin, t = 0.05 },
+    { s = randspin, t = 23/24 },
+    { s = randspin, t = 37/24 },
+    { s = randspin, t = 58/24 },
+    { s = randspin, t = 67/24 },
 }
 local cock = {
     { s = randspin, t = 0 },
@@ -693,25 +686,30 @@ SWEP.Animations = {
     ["sg_reload_start4_offset1__3"] = { Source = "sg_reload_start4_offset1__3", EventTable = sg_start1 },
     ["sg_reload_start4_offset1__4"] = { Source = "sg_reload_start4_offset1__4", EventTable = sg_start1 },
     ["sg_reload_start4_offset1__0"] = { Source = "sg_reload_start4_offset1__0", EventTable = sg_start1 },
-    ["sg_reload_start4_offset2__1"] = { Source = "sg_reload_start4_offset1__1", EventTable = sg_start1 },
-    ["sg_reload_start4_offset2__2"] = { Source = "sg_reload_start4_offset1__2", EventTable = sg_start1 },
-    ["sg_reload_start4_offset2__3"] = { Source = "sg_reload_start4_offset1__3", EventTable = sg_start1 },
-    ["sg_reload_start4_offset2__4"] = { Source = "sg_reload_start4_offset1__4", EventTable = sg_start1 },
+
+    ["sg_reload_start4_offset2__1"] = { Source = "sg_reload_start4_offset2__1", EventTable = sg_start1 },
+    ["sg_reload_start4_offset2__2"] = { Source = "sg_reload_start4_offset2__2", EventTable = sg_start1 },
+    ["sg_reload_start4_offset2__3"] = { Source = "sg_reload_start4_offset2__3", EventTable = sg_start1 },
+    ["sg_reload_start4_offset2__4"] = { Source = "sg_reload_start4_offset2__4", EventTable = sg_start1 },
+
     ["sg_reload_start4_offset3__0"] = { Source = "sg_reload_start4_offset3__0", EventTable = sg_start1 },
     ["sg_reload_start4_offset3__1"] = { Source = "sg_reload_start4_offset3__1", EventTable = sg_start1 },
     ["sg_reload_start4_offset3__2"] = { Source = "sg_reload_start4_offset3__2", EventTable = sg_start1 },
     ["sg_reload_start4_offset3__3"] = { Source = "sg_reload_start4_offset3__3", EventTable = sg_start1 },
     ["sg_reload_start4_offset3__4"] = { Source = "sg_reload_start4_offset3__4", EventTable = sg_start1 },
+
     ["sg_reload_start3_offset1__0"] = { Source = "sg_reload_start3_offset1__0", EventTable = sg_start1 },
     ["sg_reload_start3_offset1__1"] = { Source = "sg_reload_start3_offset1__1", EventTable = sg_start1 },
     ["sg_reload_start3_offset1__2"] = { Source = "sg_reload_start3_offset1__2", EventTable = sg_start1 },
     ["sg_reload_start3_offset1__3"] = { Source = "sg_reload_start3_offset1__3", EventTable = sg_start1 },
     ["sg_reload_start3_offset1__4"] = { Source = "sg_reload_start3_offset1__4", EventTable = sg_start1 },
+
     ["sg_reload_start3_offset2__0"] = { Source = "sg_reload_start3_offset2__0", EventTable = sg_start1 },
     ["sg_reload_start3_offset2__1"] = { Source = "sg_reload_start3_offset2__1", EventTable = sg_start1 },
     ["sg_reload_start3_offset2__2"] = { Source = "sg_reload_start3_offset2__2", EventTable = sg_start1 },
     ["sg_reload_start3_offset2__3"] = { Source = "sg_reload_start3_offset2__3", EventTable = sg_start1 },
     ["sg_reload_start3_offset2__4"] = { Source = "sg_reload_start3_offset2__4", EventTable = sg_start1 },
+
     ["sg_reload_start2_offset1__0"] = { Source = "sg_reload_start2_offset1__0", EventTable = sg_start1 },
     ["sg_reload_start2_offset1__1"] = { Source = "sg_reload_start2_offset1__1", EventTable = sg_start1 },
     ["sg_reload_start2_offset1__2"] = { Source = "sg_reload_start2_offset1__2", EventTable = sg_start1 },
@@ -804,12 +802,23 @@ SWEP.Animations = {
 
 ------------------------- [[[           Attachments            ]]] -------------------------
 
+SWEP.missingpartsnotifsent = 0
+
+function SWEP:HookP_BlockFire()
+    if  !self:GetValue("HasMag") or 
+        !self:GetValue("HasAmmoooooooo") then
+            if self.missingpartsnotifsent < CurTime() then
+                self.missingpartsnotifsent = CurTime() + 3
+                net.Start("arc9eftmissingparts")
+                net.Send(self:GetOwner())
+            end
+            return true 
+    end
+end
 
 SWEP.AttachmentElements = {
     ["eft_rsh12_pgrip_std"] = { Bodygroups = { {2, 1} } },
     ["eft_rsh12_mag_std"] = { Bodygroups = { {1, 1} } },
-    
-    
 }
 
 SWEP.Hook_ModifyBodygroups = function(swep, data)
@@ -831,7 +840,8 @@ SWEP.ExtraSightDistanceNoRT = true
 SWEP.Attachments = {
     {
         PrintName = "Optic",
-        Category = {"eft_optic_medium", "eft_optic_large", "eft_optic_small"},
+        Category = {"eft_optic_medium",  "eft_optic_small", "eft_mount_lobaev_only"},
+        -- RejectAttachments = { ["eft_tactical_raptar"] = true },
         ExtraSightDistance = 8,
         Bone = "mod_scope",
         Pos = Vector(0, 0, 0),
@@ -843,7 +853,7 @@ SWEP.Attachments = {
         Category = "eft_ammo_12755",
         Bone = "weapon",
         Integral = true,
-        -- Installed = "eft_ammo_57_ss190",
+        Installed = "eft_ammo_12755_ps12",
         Pos = Vector(0, 22, -2),
         Ang = Angle(0, 0, 0),
     },
@@ -851,6 +861,7 @@ SWEP.Attachments = {
         PrintName = "Magazine",
         Category = "eft_rsh12_mag",
         Bone = "mod_magazine",
+        Installed = "eft_rsh12_mag_std",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, -90, 0),
         Icon_Offset = Vector(0, 0, 0),
@@ -859,16 +870,28 @@ SWEP.Attachments = {
         PrintName = "Pistol grip",
         Category = "eft_rsh12_pgrip",
         Bone = "mod_pistol_grip",
+        Installed = "eft_rsh12_pgrip_std",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, -90, 0),
         Icon_Offset = Vector(0, 0, 0),
     },
     {
         PrintName = "Tactical",
-        Category = {"eft_tactical", "eft_tactical_top", "eft_tactical_top_big"},
+        Category = {"eft_tactical", "eft_tactical_top", "eft_tactical_top_big", "eft_rsh12_tacticalslot"},
+        RejectAttachments = { ["eft_tactical_raptar"] = true },
         Bone = "mod_tactical",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, -90, 0),
         Icon_Offset = Vector(0, 0, 0),
+    },
+    
+    {
+        PrintName = "Custom slot",
+        Category = {"eft_custom_slot", "eft_custom_slot_rsh12"},        
+        Bone = "mod_tactical",
+        Pos = Vector(0, -3, 0),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, 0),
+        -- CosmeticOnly = true,
     },
 }

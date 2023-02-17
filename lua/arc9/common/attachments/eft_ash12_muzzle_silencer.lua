@@ -1,6 +1,6 @@
 ATT.PrintName = "ASh-12 12.7x55 sound suppressor"
 ATT.CompactName = "ASh supp"
-ATT.Icon = Material("entities/eft_axmc_attachments/tsm338lm.png", "mips smooth")
+ATT.Icon = Material("entities/eft_ash12_attachments/sil.png", "mips smooth")
 ATT.Description = [[Tactical suppressor manufactured by CKIB for ASh-12 12.7x55 automatic rifle.]]
 
 ATT.Silencer = true

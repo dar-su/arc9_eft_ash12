@@ -1,6 +1,6 @@
 ATT.PrintName = "RSh-12 12.7x55 5-round cylinder"
 ATT.CompactName = "RSh12 cyl."
-ATT.Icon = Material("entities/eft_axmc_attachments/barrel.png", "mips smooth")
+ATT.Icon = Material("entities/eft_ash12_attachments/cyl.png", "mips smooth")
 ATT.Description = [[A 5-round 12.7x55 cylinder for the RSh-12 revolver.]]
 
 -- ATT.HasBarrel = true 
@@ -13,6 +13,8 @@ ATT.Description = [[A 5-round 12.7x55 cylinder for the RSh-12 revolver.]]
 
 
 ATT.ClipSize = 5
+
+ATT.HasMag = true 
 
 ATT.SortOrder = 0
 ATT.MenuCategory = "ARC9 - EFT Attachments"

@@ -839,6 +839,18 @@ SWEP.Animations = {
 
 ------------------------- [[[           Attachments            ]]] -------------------------
 
+SWEP.missingpartsnotifsent = 0
+
+function SWEP:HookP_BlockFire()
+        if  !self:GetValue("HasAmmoooooooo") then -- lol no atts needed
+            if self.missingpartsnotifsent < CurTime() then
+                self.missingpartsnotifsent = CurTime() + 3
+                net.Start("arc9eftmissingparts")
+                net.Send(self:GetOwner())
+            end
+            return true 
+    end
+end
 
 SWEP.AttachmentElements = {
     ["eft_ash12_hg_std"] = { Bodygroups = { {1, 1} } },
@@ -868,6 +880,7 @@ SWEP.Attachments = {
         PrintName = "Muzzle",
         Category = "eft_ash12_muzzle",
         Bone = "mod_muzzle",
+        Installed = "eft_ash12_muzzle_std",
         Pos = Vector(0, 0.1, 0),
         Ang = Angle(0, -90, 0),
         Icon_Offset = Vector(0, 0, 0),
@@ -875,7 +888,7 @@ SWEP.Attachments = {
     {
         PrintName = "Rear Sight",
         Category = {"eft_ar_rearsight", "eft_rearsight"},
-        ExcludeElements = {"IronsBlockingSight"},
+        ExcludeElements = {"NoRS"},
         Bone = "mod_sight_rear",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, -90, 0),
@@ -885,6 +898,7 @@ SWEP.Attachments = {
         PrintName = "Front Sight",
         Category = {"eft_ash12_fs", "eft_ar_frontsight", "eft_frontsight"},
         Bone = "mod_sight_front",
+        Installed = "eft_ash12_fs_std",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, -90, 0),
         Icon_Offset = Vector(0, 0, 0),
@@ -892,6 +906,8 @@ SWEP.Attachments = {
     {
         PrintName = "Optic",
         Category = {"eft_as12_rs", "eft_optic_medium", "eft_optic_large", "eft_optic_small"},
+        ExcludeElements = {"IronsBlockingSight"},
+        Installed = "eft_ash12_rs_std",
         Bone = "mod_scope",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, -90, 0),
@@ -902,7 +918,7 @@ SWEP.Attachments = {
         Category = "eft_ammo_12755",
         Bone = "weapon",
         Integral = true,
-        -- Installed = "eft_ammo_57_ss190",
+        Installed = "eft_ammo_12755_ps12",
         Pos = Vector(0, 4, -4),
         Ang = Angle(0, 0, 0),
     },
@@ -910,6 +926,7 @@ SWEP.Attachments = {
         PrintName = "Magazine",
         Category = "eft_ash12_mag",
         Bone = "mod_magazine",
+        Installed = "eft_ash12_mag_10",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, -90, 0),
         Icon_Offset = Vector(0, 0, 0),
@@ -918,6 +935,7 @@ SWEP.Attachments = {
         PrintName = "Foregrip",
         Category = {"eft_ash12_hg", "eft_foregrip_small", "eft_foregrip_medium", "eft_foregrip_large"},
         Bone = "weapon",
+        Installed = "eft_ash12_hg_std",
         Pos = Vector(-0.1, 20, -1.8),
         Ang = Angle(0, -90, 0),
         Icon_Offset = Vector(0, 0, 0),
@@ -937,5 +955,14 @@ SWEP.Attachments = {
         Pos = Vector(1.35-0.2, 22.5, -0.5),
         Ang = Angle(0, -90, -90),
         Icon_Offset = Vector(0, 0, 1),
+    },
+    
+    {
+        PrintName = "Custom slot",
+        Category = {"eft_custom_slot", "eft_custom_slot_ash12"},        
+        Bone = "mod_sight_rear",
+        Pos = Vector(0, -7, 0),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, 0),
     },
 }

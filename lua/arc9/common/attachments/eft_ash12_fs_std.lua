@@ -1,6 +1,6 @@
 ATT.PrintName = "ASh-12 folding front sight"
 ATT.CompactName = "ASh-12 Fr"
-ATT.Icon = Material("entities/eft_axmc_attachments/barrel.png", "mips smooth")
+ATT.Icon = Material("entities/eft_ash12_attachments/fs.png", "mips smooth")
 ATT.Description = [[Removable folding front sight ASh-12, installed on the mount.]]
 
 -- ATT.HasBarrel = true 

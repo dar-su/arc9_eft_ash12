@@ -1,6 +1,6 @@
 ATT.PrintName = "ASh-12 rear sight carry handle"
 ATT.CompactName = "ASh-12 Ca"
-ATT.Icon = Material("entities/eft_axmc_attachments/barrel.png", "mips smooth")
+ATT.Icon = Material("entities/eft_ash12_attachments/rs.png", "mips smooth")
 ATT.Description = [[Detachable Carry Handle with a rear sight for ASh-12.]]
 
 -- ATT.HasBarrel = true 
@@ -11,7 +11,7 @@ ATT.Description = [[Detachable Carry Handle with a rear sight for ASh-12.]]
 -- ATT.VisualRecoilMult = 0.95
 -- ATT.PhysBulletMuzzleVelocityMult = 1.056
 
-ATT.ActivateElements = {"IronsBlockingSight"}
+ATT.ActivateElements = {"NoRS"}
 
 ATT.Sights = {
     {

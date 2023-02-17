@@ -1,6 +1,6 @@
 ATT.PrintName = "12.7x55mm PS12"
 ATT.CompactName = "PS12"
-ATT.Icon = Material("entities/eft_attachments/ammo/338/ap.png", "mips smooth")
+ATT.Icon = Material("entities/eft_ash12_attachments/12.png", "mips smooth")
 ATT.Description = [[12.7x55 mm PS12 cartridge with a 33 gram heavy subsonic lead bullet.]]
 ATT.SortOrder = 0
 ATT.MenuCategory = "ARC9 - EFT Attachments"

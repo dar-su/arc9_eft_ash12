@@ -1,6 +1,6 @@
 ATT.PrintName = "ASh-12 polymer handguard"
 ATT.CompactName = "ASh-12 pol"
-ATT.Icon = Material("entities/eft_axmc_attachments/barrel.png", "mips smooth")
+ATT.Icon = Material("entities/eft_ash12_attachments/hg.png", "mips smooth")
 ATT.Description = [[Polymer ASh-12 foregrip produced by CKIB.]]
 
 -- ATT.HasBarrel = true 

@@ -1,6 +1,6 @@
 ATT.PrintName = "ASh-12 12.7x55 muzzle brake-compensator"
 ATT.CompactName = "ASh MB"
-ATT.Icon = Material("entities/eft_axmc_attachments/tsm338lm.png", "mips smooth")
+ATT.Icon = Material("entities/eft_ash12_attachments/mz.png", "mips smooth")
 ATT.Description = [[Regular muzzle brake for ASh-12, produced by CKIB.]]
 
 -- ATT.Silencer = true
