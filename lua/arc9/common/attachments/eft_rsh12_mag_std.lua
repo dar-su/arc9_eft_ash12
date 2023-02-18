@@ -3,13 +3,10 @@ ATT.CompactName = "RSh12 cyl."
 ATT.Icon = Material("entities/eft_ash12_attachments/cyl.png", "mips smooth")
 ATT.Description = [[A 5-round 12.7x55 cylinder for the RSh-12 revolver.]]
 
--- ATT.HasBarrel = true 
-
--- ATT.EFTErgoAdd = -18
--- ATT.CustomCons = { Ergonomics = "-18" }
--- ATT.RecoilMult = 0.95
--- ATT.VisualRecoilMult = 0.95
--- ATT.PhysBulletMuzzleVelocityMult = 1.056
+ATT.EFTErgoAdd = -5
+ATT.CustomCons = { Ergonomics = "-5" }
+ATT.RecoilMult = 0.98
+ATT.VisualRecoilMult = 0.98
 
 
 ATT.ClipSize = 5

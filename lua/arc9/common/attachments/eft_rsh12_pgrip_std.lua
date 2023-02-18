@@ -3,13 +3,8 @@ ATT.CompactName = "RSh-12"
 ATT.Icon = Material("entities/eft_ash12_attachments/grip.png", "mips smooth")
 ATT.Description = [[A standard-issue plastic pistol grip for the RSh-12 revolver, manufactured by the KBP Instrument Design Bureau.]]
 
--- ATT.HasBarrel = true 
-
--- ATT.EFTErgoAdd = -18
--- ATT.CustomCons = { Ergonomics = "-18" }
--- ATT.RecoilMult = 0.95
--- ATT.VisualRecoilMult = 0.95
--- ATT.PhysBulletMuzzleVelocityMult = 1.056
+ATT.EFTErgoAdd = 5
+ATT.CustomPros = { Ergonomics = "+5" }
 
 
 ATT.HasGrip = true 

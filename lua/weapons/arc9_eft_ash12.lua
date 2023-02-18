@@ -32,19 +32,52 @@ SWEP.DefaultBodygroups = "0000000000000"
 
 SWEP.BarrelLength = 36
 ------------------------- [[[           STATS            ]]] -------------------------
+-- default ps12
+SWEP.DamageMax = 115/2
+SWEP.DamageMin = 99/2
+SWEP.PhysBulletMuzzleVelocity = 285 /0.0254
+SWEP.RangeMin = 10
+SWEP.RangeMax = 1000 /0.0254
 
+SWEP.Penetration =      28 *2.54/100/0.0254
+SWEP.PenetrationDelta = 60/100
+SWEP.ArmorPiercing =    60/100
+SWEP.RicochetChance =   30/100
+SWEP.DamageLookupTable = {
+    {   10/0.0254, 
+    115/2     },
 
-------------------------- [[[           STATS            ]]] -------------------------
+    {   100 /0.0254, 
+    112.7/2     },
 
---          Damage
+    {   200 /0.0254, 
+    110.6/2     },
 
-SWEP.DamageMax = 33
-SWEP.DamageMin = 24
-SWEP.DamageRand = 0.01
-SWEP.RangeMin = 600
-SWEP.RangeMax = 11000
-SWEP.Penetration = 5
-SWEP.PhysBulletMuzzleVelocity = 21000
+    {   300 /0.0254, 
+    109/2     },
+
+    {   400 /0.0254, 
+    107/2     },
+
+    {   500 /0.0254, 
+    105.4/2     },
+
+    {   600 /0.0254, 
+    104/2     },
+
+    {   700 /0.0254, 
+    102/2     },
+
+    {   800 /0.0254, 
+    101/2     },
+
+    {   900 /0.0254, 
+    100/2     },
+
+    {   1000 /0.0254, 
+    99/2     },
+}
+
 
 
 --          Spread
@@ -151,17 +184,18 @@ SWEP.SpeedMultBlindFire = 1
 
 SWEP.FreeAimRadius = 2
 SWEP.FreeAimRadiusSights = 0
-SWEP.Sway = 1.5
-SWEP.SwayMultSights = 0.3
-SWEP.SwayMultMidAir = 2
-SWEP.SwayMultMove = 1.15
-SWEP.SwayMultCrouch = 0.66
-SWEP.SwayMultShooting = 1.2
+
+SWEP.Sway = 1
+SWEP.SwayMove = 0.5
+SWEP.SwayMidAir = 10
+SWEP.SwayMultCrouch = 0.75
+SWEP.SwayMultHipFire = 0.01
+SWEP.SwayMultSights = 0.15
 
 
 --          Generic stats
 
-SWEP.Ammo = "ar2"
+SWEP.Ammo = "357"
 SWEP.ChamberSize = 0 -- no mag
 SWEP.ClipSize = 1 -- actual chamber (no mag)
 SWEP.SupplyLimit = 4
@@ -179,6 +213,16 @@ SWEP.PrimaryBash = false
 SWEP.TracerNum = 0
 SWEP.TracerColor = Color(255, 225, 200)
 
+
+SWEP.Malfunction = true 
+SWEP.MalfunctionNeverLastShoot = true 
+SWEP.MalfunctionMeanShotsToFail = 100*2
+-- SWEP.MalfunctionMeanShotsToFailMultHot = -0.1*2
+SWEP.Overheat = true
+SWEP.HeatCapacity = 120
+SWEP.HeatDissipation = 4
+SWEP.HeatPerShot = 1
+SWEP.HeatLockout = false
 
 
 ------------------------- [[[           Other            ]]] -------------------------
@@ -241,9 +285,13 @@ SWEP.CamQCA_Mult_ADS = 0.05
 SWEP.MuzzleParticle = "muzzleflash_g3"
 
 SWEP.CaseEffectQCA = 2
-SWEP.ShellModel = "models/shells/shell_556.mdl"
+SWEP.ShellModel = "models/weapons/arc9/darsu_eft/shells/127x55.mdl"
+SWEP.ShellSounds = { "weapons/darsu_eft/shells/heavy_shell_concrete1.wav", "weapons/darsu_eft/shells/heavy_shell_concrete2.wav", "weapons/darsu_eft/shells/heavy_shell_concrete3.wav", 
+"weapons/darsu_eft/shells/heavy_shell_concrete1.wav", "weapons/darsu_eft/shells/heavy_shell_concrete2.wav", "weapons/darsu_eft/shells/heavy_shell_concrete3.wav",
+"weapons/darsu_eft/shells/heavy_shell_concrete1.wav", "weapons/darsu_eft/shells/heavy_shell_concrete2.wav", "weapons/darsu_eft/shells/heavy_shell_concrete3.wav" } -- repeat cuz fuck gmod 
+
 SWEP.ShellScale = 1
-SWEP.ShellCorrectAng = Angle(0, 180, 0)
+SWEP.ShellCorrectAng = Angle(0, 0, 0)
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.BulletBones = {
@@ -253,31 +301,6 @@ SWEP.BulletBones = {
     [4] = "bullet3",
     [5] = "bullet4",
 }
-
-
--- SWEP.HideBones = { -- please do it later
---     "vm_mag2",
---     "tag_mag2"
--- }
-
--- SWEP.ReloadHideBoneTables = {
---     [1] = {
---         "vm_mag",
---         "tag_mag"
---     },
---     [2] = {
---         "vm_mag2",
---         "tag_mag2"
---     }
--- }
-
-
---          UBGL
-
-SWEP.UBGLIntegralReload = true -- The UBGL uses reload animations that are baked into the gun.
-SWEP.DoFireAnimationUBGL = true
-SWEP.NoShellEjectUBGL = true
-SWEP.MuzzleEffectQCAUBGL = 1
 
 
 
@@ -966,3 +989,10 @@ SWEP.Attachments = {
         Icon_Offset = Vector(0, 0, 0),
     },
 }
+
+SWEP.EFTErgo = 55
+if ARC9EFTBASE then
+    SWEP.AimDownSightsTimeHook = ARC9EFT.ErgoHook
+else
+    print("Dum! install arc9 eft shared!!!!!!!!!!!!!!")
+end

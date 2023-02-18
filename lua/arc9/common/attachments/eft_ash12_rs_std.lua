@@ -3,13 +3,8 @@ ATT.CompactName = "ASh-12 Ca"
 ATT.Icon = Material("entities/eft_ash12_attachments/rs.png", "mips smooth")
 ATT.Description = [[Detachable Carry Handle with a rear sight for ASh-12.]]
 
--- ATT.HasBarrel = true 
-
--- ATT.EFTErgoAdd = -18
--- ATT.CustomCons = { Ergonomics = "-18" }
--- ATT.RecoilMult = 0.95
--- ATT.VisualRecoilMult = 0.95
--- ATT.PhysBulletMuzzleVelocityMult = 1.056
+ATT.EFTErgoAdd = -2
+ATT.CustomCons = { Ergonomics = "-2" }
 
 ATT.ActivateElements = {"NoRS"}
 
@@ -27,7 +22,6 @@ ATT.Attachments = {
         PrintName = "Optic",
         Category = {"eft_optic_large", "eft_optic_small", "eft_optic_medium"},
         Pos = Vector(-0.2, 0, -1.7),
-        --Pos = Vector(0, 0, 0),
         Ang = Angle(0, 0, 0),
         Icon_Offset = Vector(0, 0, 0.2),
     },

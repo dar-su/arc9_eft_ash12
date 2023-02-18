@@ -10,15 +10,17 @@ ATT.BarrelLengthAdd = 5
 
 ATT.MuzzleEffectQCA = 5
 
--- ATT.EFTErgoAdd = -30
--- ATT.CustomCons = { Ergonomics = "-30" }
--- ATT.RecoilMult = 0.85
--- ATT.VisualRecoilMult = 0.85
--- ATT.SpreadMult = 1.04
--- ATT.PhysBulletMuzzleVelocityMult = 1.075
--- ATT.MalfunctionMeanShotsToFailMult = 0.75
+ATT.EFTErgoAdd = -21
+ATT.CustomCons = { Ergonomics = "-21" }
+ATT.RecoilMult = 0.82
+ATT.VisualRecoilMult = 0.82
+ATT.SpreadMult = 0.9
+ATT.PhysBulletMuzzleVelocityMult = 1.01
+
+ATT.HeatCapacityMult = 0.84
+
+ATT.MalfunctionMeanShotsToFailMult = 0.9
 
 ATT.SortOrder = 0
 ATT.MenuCategory = "ARC9 - EFT Attachments"
--- ATT.Model = "models/weapons/arc9/darsu_eft/mods/silencer_ai_tactical_sound_moderator.mdl"
 ATT.Category = {"eft_ash12_muzzle"}

@@ -32,19 +32,51 @@ SWEP.DefaultBodygroups = "000"
 
 SWEP.BarrelLength = 36
 ------------------------- [[[           STATS            ]]] -------------------------
+-- default ps12
+SWEP.DamageMax = 115/2
+SWEP.DamageMin = 99/2
+SWEP.PhysBulletMuzzleVelocity = 285 /0.0254
+SWEP.RangeMin = 10
+SWEP.RangeMax = 1000 /0.0254
 
+SWEP.Penetration =      28 *2.54/100/0.0254
+SWEP.PenetrationDelta = 60/100
+SWEP.ArmorPiercing =    60/100
+SWEP.RicochetChance =   30/100
+SWEP.DamageLookupTable = {
+    {   10/0.0254, 
+    115/2     },
 
-------------------------- [[[           STATS            ]]] -------------------------
+    {   100 /0.0254, 
+    112.7/2     },
 
---          Damage
+    {   200 /0.0254, 
+    110.6/2     },
 
-SWEP.DamageMax = 33
-SWEP.DamageMin = 24
-SWEP.DamageRand = 0.01
-SWEP.RangeMin = 600
-SWEP.RangeMax = 11000
-SWEP.Penetration = 5
-SWEP.PhysBulletMuzzleVelocity = 21000
+    {   300 /0.0254, 
+    109/2     },
+
+    {   400 /0.0254, 
+    107/2     },
+
+    {   500 /0.0254, 
+    105.4/2     },
+
+    {   600 /0.0254, 
+    104/2     },
+
+    {   700 /0.0254, 
+    102/2     },
+
+    {   800 /0.0254, 
+    101/2     },
+
+    {   900 /0.0254, 
+    100/2     },
+
+    {   1000 /0.0254, 
+    99/2     },
+}
 
 
 --          Spread
@@ -108,10 +140,7 @@ SWEP.Overheat = false
 --          Firemodes
 
 SWEP.RPM = 134
--- SWEP.Firemodes = { { Mode = -1 }, { Mode = 1 } } -- auto, semi
 SWEP.Firemodes = {
-    -- { Mode = 1, PoseParam = 1 },
-    -- { Mode = -1, PoseParam = 2, 
     { Mode = 1, PrintName = "Double action", PoseParam = 1  },
     { Mode = 1, PrintName = "Single action", PoseParam = 2, EFTSingleAction = true, ManualAction = true, RPM = 300, TriggerDelay = false, TriggerStartFireAnim = false, Spread = 0.005 },
 }
@@ -133,12 +162,13 @@ SWEP.SpeedMultBlindFire = 1
 
 SWEP.FreeAimRadius = 2
 SWEP.FreeAimRadiusSights = 0
-SWEP.Sway = 1.5
-SWEP.SwayMultSights = 0.3
-SWEP.SwayMultMidAir = 2
-SWEP.SwayMultMove = 1.15
-SWEP.SwayMultCrouch = 0.66
-SWEP.SwayMultShooting = 1.2
+
+SWEP.Sway = 1
+SWEP.SwayMove = 0.5
+SWEP.SwayMidAir = 10
+SWEP.SwayMultCrouch = 0.75
+SWEP.SwayMultHipFire = 0.01
+SWEP.SwayMultSights = 0.15
 
 
 --          Generic stats
@@ -219,7 +249,7 @@ SWEP.CamQCA_Mult_ADS = 0.1
 SWEP.MuzzleParticle = "muzzleflash_pistol_deagle"
 
 SWEP.CaseEffectQCA = 2
-SWEP.ShellModel = "models/weapons/arc9/darsu_eft/shells/86x70.mdl"
+SWEP.ShellModel = "models/weapons/arc9/darsu_eft/shells/127x55.mdl"
 SWEP.ShellSounds = { "weapons/darsu_eft/shells/heavy_shell_concrete1.wav", "weapons/darsu_eft/shells/heavy_shell_concrete2.wav", "weapons/darsu_eft/shells/heavy_shell_concrete3.wav", 
 "weapons/darsu_eft/shells/heavy_shell_concrete1.wav", "weapons/darsu_eft/shells/heavy_shell_concrete2.wav", "weapons/darsu_eft/shells/heavy_shell_concrete3.wav",
 "weapons/darsu_eft/shells/heavy_shell_concrete1.wav", "weapons/darsu_eft/shells/heavy_shell_concrete2.wav", "weapons/darsu_eft/shells/heavy_shell_concrete3.wav" } -- repeat cuz fuck gmod 
@@ -239,30 +269,6 @@ SWEP.BulletBones = {
     [5] = "bullet005",
 }
 
-
--- SWEP.HideBones = { -- please do it later
---     "vm_mag2",
---     "tag_mag2"
--- }
-
--- SWEP.ReloadHideBoneTables = {
---     [1] = {
---         "vm_mag",
---         "tag_mag"
---     },
---     [2] = {
---         "vm_mag2",
---         "tag_mag2"
---     }
--- }
-
-
---          UBGL
-
-SWEP.UBGLIntegralReload = true -- The UBGL uses reload animations that are baked into the gun.
-SWEP.DoFireAnimationUBGL = true
-SWEP.NoShellEjectUBGL = true
-SWEP.MuzzleEffectQCAUBGL = 1
 
 
 
@@ -895,3 +901,10 @@ SWEP.Attachments = {
         -- CosmeticOnly = true,
     },
 }
+
+SWEP.EFTErgo = 40
+if ARC9EFTBASE then
+    SWEP.AimDownSightsTimeHook = ARC9EFT.ErgoHook
+else
+    print("Dum! install arc9 eft shared!!!!!!!!!!!!!!")
+end

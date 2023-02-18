@@ -3,13 +3,10 @@ ATT.CompactName = "ASh-12 pol"
 ATT.Icon = Material("entities/eft_ash12_attachments/hg.png", "mips smooth")
 ATT.Description = [[Polymer ASh-12 foregrip produced by CKIB.]]
 
--- ATT.HasBarrel = true 
+ATT.EFTErgoAdd = 5
+ATT.CustomPros = { Ergonomics = "+5" }
 
--- ATT.EFTErgoAdd = -18
--- ATT.CustomCons = { Ergonomics = "-18" }
--- ATT.RecoilMult = 0.95
--- ATT.VisualRecoilMult = 0.95
--- ATT.PhysBulletMuzzleVelocityMult = 1.056
+ATT.HeatCapacityMult = 0.96
 
 ATT.SortOrder = 0
 ATT.MenuCategory = "ARC9 - EFT Attachments"
