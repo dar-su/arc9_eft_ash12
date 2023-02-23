@@ -10,7 +10,7 @@ ATT.ActivateElements = {"NoRS"}
 
 ATT.Sights = {
     {
-        Pos = Vector(0, 7.5, -1.9),
+        Pos = Vector(0, 8.62, -1.9),
         Ang = Angle(0, 0, 0),
         Magnification = 1.1,
         IsIronSight = true

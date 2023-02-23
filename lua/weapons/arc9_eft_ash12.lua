@@ -93,38 +93,22 @@ SWEP.RecoilMultHipFire = 1.1
 SWEP.RecoilMultCrouch = 0.75
 SWEP.RecoilAutoControlMultHipFire = 0.5
 
-SWEP.RecoilUp = 1
+SWEP.RecoilUp = 3
 SWEP.RecoilSide = 0.7
 SWEP.RecoilRandomUp = 0.9
 SWEP.RecoilRandomSide = 0.8
 
 SWEP.ViewRecoil = true
-SWEP.ViewRecoilUpMult = 40
+-- SWEP.ViewRecoil = false 
+SWEP.ViewRecoilUpMult = 2
 SWEP.ViewRecoilUpMultMultHipFire = 2
 SWEP.ViewRecoilSideMult = -4
 SWEP.ViewRecoilSideMultMultHipFire = -2
 
 SWEP.RecoilDissipationRate = 11
 SWEP.RecoilAutoControl = 10
-SWEP.RecoilResetTime = 0.05
-
--- SWEP.RecoilPatternDrift = 90
--- SWEP.RecoilLookupTable = {
---     0,
---     0,
---     160,
---     45,
---     45,
---     45,
---     45,
--- }
--- SWEP.RecoilLookupTableOverrun = { -- Repeatedly take values from this table if we run out in the main table
---     -87,
---     87,
---     -87,
---     87,
---     87,
--- }
+SWEP.RecoilResetTime = 0.03
+SWEP.RecoilFullResetTime = 0.15
 
 SWEP.UseVisualRecoil = true 
 SWEP.VisualRecoil = 1
@@ -132,8 +116,8 @@ SWEP.VisualRecoilMultHipFire = 0.3
 SWEP.VisualRecoilMultSights = 0.3
 
 SWEP.VisualRecoilCenter = Vector(2, 11, 2)
-SWEP.VisualRecoilUp = 38 -- Vertical tilt
-SWEP.VisualRecoilSide = 0.7 -- Horizontal tilt
+SWEP.VisualRecoilUp = 52 -- Vertical tilt
+SWEP.VisualRecoilSide = 0.4 -- Horizontal tilt
 SWEP.VisualRecoilRoll = 25 -- Roll tilt
 
 SWEP.VisualRecoilPunch = 9 -- How far back visual recoil moves the gun
@@ -141,10 +125,32 @@ SWEP.VisualRecoilPunchMultSights = 0.5 -- How far back visual recoil moves the g
 
 
 SWEP.VisualRecoilSpringPunchDamping = 7
-SWEP.VisualRecoilDampingConst = 100
+SWEP.VisualRecoilDampingConst = 35
 SWEP.VisualRecoilSpringMagnitude = 1
-SWEP.VisualRecoilPositionBumpUp = 0.00001
+SWEP.VisualRecoilPositionBumpUp = -0.01
 SWEP.VisualRecoilPositionBumpUpHipFire = 0.001
+
+
+SWEP.VisualRecoilThinkFunc = function(springconstant, VisualRecoilSpringMagnitude, PUNCH_DAMPING, recamount)
+    if recamount > 3 then
+        recamount = math.Clamp((recamount - 3) / 33, 0, 1)
+        return springconstant * math.max(1, 20 * recamount), VisualRecoilSpringMagnitude * 1, PUNCH_DAMPING * 1
+    end
+    return springconstant, VisualRecoilSpringMagnitude, PUNCH_DAMPING
+end
+
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
+    if recamount > 2 then
+        recamount = 1.65 - math.Clamp((recamount - 2) / 2, 0, 1)
+        
+        return up * recamount, side * 1.5, roll, punch * 0.9
+    end
+    return up, side, roll, punch
+end
+
+
+
 
 SWEP.RecoilKick = 0.05
 SWEP.RecoilKickDamping = 10
@@ -153,8 +159,8 @@ SWEP.RecoilKickDamping = 10
 --          Heating
 
 SWEP.Overheat = true
-SWEP.HeatCapacity = 90
-SWEP.HeatDissipation = 6
+SWEP.HeatCapacity = 75
+SWEP.HeatDissipation = 3
 SWEP.HeatLockout = false
 
 
@@ -757,6 +763,14 @@ SWEP.Animations = {
             
         },
         EjectAt = 2.75,
+        IKTimeLine = {
+            { t = 0, lhik = 1 },
+            { t = 0.25, lhik = 1 },
+            { t = 0.34, lhik = 0 },
+            { t = 0.82, lhik = 0 },
+            { t = 0.95, lhik = 1 },
+            { t = 1, lhik = 1 },
+        },
     },
     ["jam2"] = {
         Source = "jam_feed", -- jam feed
@@ -779,6 +793,14 @@ SWEP.Animations = {
             { s = randspin, t = 4.46 },
         },
         EjectAt = 3.55,
+        IKTimeLine = {
+            { t = 0, lhik = 1 },
+            { t = 0.47, lhik = 1 },
+            { t = 0.58, lhik = 0 },
+            { t = 0.73, lhik = 0 },
+            { t = 0.9, lhik = 1 },
+            { t = 1, lhik = 1 },
+        },
     },
     ["jam3"] = {
         Source = "jam_hard", -- jam hard
@@ -801,7 +823,11 @@ SWEP.Animations = {
             { s = path .. "ash12_bolt_handle_bounce.wav", t = 4.75 },
             { s = randspin, t = 4.83 },
         },
-        EjectAt = 4.23  
+        EjectAt = 4.23,
+        IKTimeLine = {
+            { t = 0, lhik = 1 },
+            { t = 1, lhik = 1 },
+        },
     },
     ["jam4"] = {
         Source = "jam_soft", -- jam soft
@@ -821,7 +847,11 @@ SWEP.Animations = {
             { s = randspin, t = 3.45 },
 
         },
-        EjectAt = 2.98
+        EjectAt = 2.98,
+        IKTimeLine = {
+            { t = 0, lhik = 1 },
+            { t = 1, lhik = 1 },
+        },
     },
 
     ["firemode_1"] = {
