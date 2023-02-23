@@ -414,7 +414,7 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
         local rand = math.Truncate(util.SharedRandom("hi", 1, 4.99))
         -- 0 = misfire, 1 = eject, 2 = feed, 3 = bolt, 4 = bolt      -- no misfire here
         if ARC9EFTBASE and SERVER then
-            timer.Simple(1, function()
+            timer.Simple(0.3, function()
                 if IsValid(swep) and IsValid(swep:GetOwner()) then
                     net.Start("arc9eftjam")
                     net.WriteUInt(rand, 3)
@@ -741,91 +741,87 @@ SWEP.Animations = {
     ["jam1"] = {
         Source = "jam_shell", -- jam shell
         EventTable = {
-            { s = randspin, t = 0.15 },
-            { s = path .. "aiax_bolt_out.wav", t = 0.32 },
-            { s = randspin, t = 0.75 },
-            { s = path .. "aiax_bolt_jam6_in1.wav", t = 0.95 },
-            { s = randspin, t = 1.55 },
-            { s = randspin, t = 1.68 },
-            { s = randspin, t = 2.44 },
-            { s = path .. "aiax_bolt_jam1.wav", t = 3.2 }, 
-            -- { s = path .. "aiax_bolt_jam2.wav", t = 3.42 }, 
-            { s = randspin, t = 3.59 },
-            { s = randspin, t = 3.92 },
-            { s = randspin, t = 4.25 },
-            { s = randspin, t = 4.4 },
-            { s = path .. "generic_jam_shell_ remove_heavy1.wav", t = 4.48 }, 
-            { s = randspin, t = 4.65 },
-            { s = path .. "aiax_bolt_in.wav", t = 5.05 },
-            { s = randspin, t = 5.76 },
+            { s = randspin, t = 0.1 },
+            { s = randspin, t = 0.71 },
+            { s = randspin, t = 1.2 },
+            { s = path .. "ash12_bolt_handle_grab.wav", t = 1.43 },
+            { s = path .. "ash12_bolt_in_slow.wav", t = 1.76 },
+            { s = randspin, t = 2 },
+            { s = randspin, t = 2.2 },
+            { s = randspin, t = 2.48 },
+            { s = randspin, t = 2.65 },
+            { s = path .. "generic_jam_shell_ remove_heavy3.wav", t = 2.7 },
+            { s = path .. "ash12_bolt_in.wav", t = 2.75 },
+            { s = path .. "ash12_bolt_handle_bounce.wav", t = 3.12 },
+            { s = randspin, t = 3.21 },
+            
         },
-        EjectAt = 4.7,
+        EjectAt = 2.75,
     },
     ["jam2"] = {
         Source = "jam_feed", -- jam feed
         EventTable = {
-            { s = randspin, t = 0.15 },
-            { s = path .. "aiax_bolt_out.wav", t = 0.35 },
-            { s = randspin, t = 0.65 },
-            { s = path .. "aiax_bolt_jam6_in1.wav", t = 0.95 },
-            { s = randspin, t = 1.55 },
-            { s = randspin, t = 1.68 },
-            { s = randspin, t = 2.44 },
-            { s = path .. "aiax_bolt_jam1.wav", t = 3.26 }, 
-            { s = path .. "aiax_bolt_jam5_out1.wav", t = 3.62 },
-            { s = randspin, t = 3.7 },
-            { s = randspin, t = 4.06 },
-            { s = randspin, t = 4.53 },
-            { s = path .. "generic_jam_shell_ remove_heavy3.wav", t = 5.45 },
-            { s = randspin, t = 6 },
-            { s = path .. "aiax_bolt_in.wav", t = 6.66 },
-            { s = randspin, t = 7.27 },
+            { s = randspin, t = 0.1 },
+            { s = randspin, t = 0.71 },
+            { s = randspin, t = 1.15 },
+            { s = path .. "ash12_bolt_handle_grab.wav", t = 1.6 },
+            { s = path .. "ash12_bolt_in_slow.wav", t = 1.91 },
+            { s = path .. "ash12_bolt_out.wav", t = 2.31 },
+            { s = randspin, t = 2.61 },
+            { s = path .. "generic_jam_slidelock_hit1.wav", t = 3 },
+            { s = randspin, t = 3.12 },
+            { s = path .. "generic_jam_slidelock_hit2.wav", t = 3.5 },
+            { s = path .. "generic_jam_shell_ remove_heavy3.wav", t = 3.55 },
+            { s = randspin, t = 3.59 },
+            { s = randspin, t = 4 },
+            { s = path .. "ash12_bolt_in.wav", t = 4.05 },
+            { s = path .. "ash12_bolt_handle_bounce.wav", t = 4.21 },
+            { s = randspin, t = 4.46 },
         },
-        -- EjectAt = 6.5,
+        EjectAt = 3.55,
     },
     ["jam3"] = {
         Source = "jam_hard", -- jam hard
         EventTable = {
-            { s = randspin, t = 0.14 },
-            { s = path .. "aiax_bolt_jam3_hit.wav", t = 0.52 }, -- generic_jam_slidelock_hit1   generic_jam_slidelock_hit2
-            { s = path .. "aiax_bolt_jam4_hit.wav", t = 0.94 },
-            { s = randspin, t = 1.48 },
-            { s = randspin, t = 2.35 },
-            { s = path .. "aiax_bolt_jam3_hit.wav", t = 2.99 },
-            { s = path .. "aiax_bolt_jam3_hit.wav", t = 3.32 },
-            { s = randspin, t = 3.61 },
-            { s = randspin, t = 4.26 },
-            { s = path .. "aiax_bolt_jam3_hit.wav", t = 4.76 },
-            { s = path .. "aiax_bolt_jam4_hit.wav", t = 5.43 },
-            { s = randspin, t = 4.45 },
-            { s = path .. "aiax_bolt_jam5_out1.wav", t = 5.8 },
-            { s = randspin, t = 6.1 },
-            { s = path .. "aiax_bolt_jam5_out2.wav", t = 6.16 },
-            { s = randspin, t = 6.45 },
-            { s = randspin, t = 6.61 },
-            { s = path .. "aiax_bolt_in.wav", t = 7.07 },
-            { s = randspin, t = 7.71 },
+            { s = randspin, t = 0.1 },
+            { s = randspin, t = 0.71 },
+            { s = randspin, t = 1.15 },
+            { s = path .. "ash12_bolt_handle_grab.wav", t = 1.46 },
+            { s = path .. "ash12_bolt_in_slow.wav", t = 1.88 },
+            { s = randspin, t = 1.92 },
+            { s = path .. "ash12_bolt_out_slow.wav", t = 2.3 },
+            { s = path .. "ash12_bolt_handle_bounce.wav", t = 2.81 },
+            { s = randspin, t = 2.84 },
+            { s = path .. "ash12_bolt_handle_grab.wav", t = 3.2 },
+            { s = path .. "ash12_bolt_in_slow.wav", t = 3.47 },
+            { s = randspin, t = 4.06 },
+            { s = path .. "ash12_bolt_out.wav", t = 4.11 },
+            { s = path .. "generic_jam_shell_ remove_heavy3.wav", t = 4.23 },
+            { s = path .. "ash12_bolt_in.wav", t = 4.57 },
+            { s = path .. "ash12_bolt_handle_bounce.wav", t = 4.75 },
+            { s = randspin, t = 4.83 },
         },
-        EjectAt = 5.95
+        EjectAt = 4.23  
     },
     ["jam4"] = {
         Source = "jam_soft", -- jam soft
         EventTable = {
-            { s = randspin, t = 0.14 },
-            { s = path .. "aiax_bolt_jam3_hit.wav", t = 0.52 }, -- generic_jam_slidelock_hit1   generic_jam_slidelock_hit2
-            { s = path .. "aiax_bolt_jam4_hit.wav", t = 0.94 },
-            { s = randspin, t = 1.48 },
-            { s = randspin, t = 2.35 },
-            { s = path .. "aiax_bolt_jam3_hit.wav", t = 2.99 },
-            { s = path .. "aiax_bolt_jam5_out1.wav", t = 3.35 },
-            { s = randspin, t = 3.55 },
-            { s = path .. "aiax_bolt_jam5_out2.wav", t = 3.71 },
-            { s = randspin, t = 3.98 },
-            { s = randspin, t = 4.36 },
-            { s = path .. "aiax_bolt_in.wav", t = 4.58 },
-            { s = randspin, t = 5.27 },
+            { s = randspin, t = 0.1 },
+            { s = randspin, t = 0.71 },
+            { s = randspin, t = 1.21 },
+            { s = path .. "ash12_bolt_handle_grab.wav", t = 1.56 },
+            { s = path .. "ash12_bolt_in_slow.wav", t = 1.9 },
+            { s = randspin, t = 2.05 },
+            { s = path .. "ash12_bolt_out_slow.wav", t = 2.46 },
+            { s = randspin, t = 2.6 },
+            { s = path .. "ash12_bolt_out.wav", t = 2.83 },
+            { s = path .. "generic_jam_shell_ remove_heavy3.wav", t = 2.97 },
+            { s = path .. "ash12_bolt_in.wav", t = 3.12 },
+            { s = path .. "ash12_bolt_handle_bounce.wav", t = 3.27 },
+            { s = randspin, t = 3.45 },
+
         },
-        EjectAt = 3.85
+        EjectAt = 2.98
     },
 
     ["firemode_1"] = {
@@ -959,6 +955,11 @@ SWEP.Attachments = {
         Category = {"eft_ash12_hg", "eft_foregrip_small", "eft_foregrip_medium", "eft_foregrip_large"},
         Bone = "weapon",
         Installed = "eft_ash12_hg_std",
+        SubAttachments = {
+            {
+                Installed = "eft_foregrip_ash12",
+            }
+        },
         Pos = Vector(-0.1, 20, -1.8),
         Ang = Angle(0, -90, 0),
         Icon_Offset = Vector(0, 0, 0),
