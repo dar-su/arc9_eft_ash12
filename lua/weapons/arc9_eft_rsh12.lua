@@ -23,7 +23,7 @@ SWEP.Description = [[The powerful RSh-12 (Revolver Shturmovoy 12 - "Assault Revo
 --     "[308 Conversion]XQAAAQDgAgAAAAAAAAA9iIIiM7tuo1AtT00OeFDsVy0QjzPJ+n72/CiKtDlryAX9+6/kqhA7Hr1E/2D9Iz6rN8zTUCuQ+5Sp9lQY7qxUfunqrzbaeslGLj1cfug0NTlmGh3gA+wVZQA19whbS40jfVlj6uqIKtm8FZlaaIpJNHmek0HjPG94drKMnm1eLKJZln1zdAss1Q90n0VytUc4mj3lf8lEE2semdym9+SxGjHM01bSaBF/wcnHHwiusLCFbaQpe/jslG+Y7ojSHZTNEFqsqYb7KccG04jc/+gn2C2szNw="
 -- }
     
-SWEP.Slot = 3
+SWEP.Slot = 1
 SWEP.WorldModel = "models/weapons/w_357.mdl"
 SWEP.ViewModel = "models/weapons/arc9/darsu_eft/c_rsh12.mdl"
 SWEP.ViewModelFOVBase = 62
@@ -86,11 +86,11 @@ SWEP.Spread = 0.015
 
 --          Recoil
 
-SWEP.Recoil = 0.13*100
+SWEP.Recoil = 10
 
 SWEP.RecoilMultHipFire = 1.1
 SWEP.RecoilMultCrouch = 0.75
-SWEP.RecoilAutoControlMultHipFire = 0.5
+SWEP.RecoilAutoControlMultHipFire = 2
 
 SWEP.RecoilUp = 1
 SWEP.RecoilSide = 0.7
@@ -104,7 +104,7 @@ SWEP.ViewRecoilSideMult = -4
 SWEP.ViewRecoilSideMultMultHipFire = -2
 
 SWEP.RecoilDissipationRate = 5
-SWEP.RecoilAutoControl = 10
+SWEP.RecoilAutoControl = 5
 SWEP.RecoilResetTime = 0.05
 
 
@@ -113,20 +113,20 @@ SWEP.VisualRecoil = 1
 SWEP.VisualRecoilMultHipFire = 0.9
 SWEP.VisualRecoilMultSights = 0.9
 
-SWEP.VisualRecoilCenter = Vector(2, 11, 2)
-SWEP.VisualRecoilUp = 38 -- Vertical tilt
+SWEP.VisualRecoilCenter = Vector(2, 21, 2)
+SWEP.VisualRecoilUp = 50 -- Vertical tilt
 SWEP.VisualRecoilSide = 0.7 -- Horizontal tilt
 SWEP.VisualRecoilRoll = 25 -- Roll tilt
 
-SWEP.VisualRecoilPunch = 9 -- How far back visual recoil moves the gun
+SWEP.VisualRecoilPunch = 5 -- How far back visual recoil moves the gun
 SWEP.VisualRecoilPunchMultSights = 0.5 -- How far back visual recoil moves the gun
 
 
-SWEP.VisualRecoilSpringPunchDamping = 7
+SWEP.VisualRecoilSpringPunchDamping = 4
 SWEP.VisualRecoilDampingConst = 100
 SWEP.VisualRecoilSpringMagnitude = 1
-SWEP.VisualRecoilPositionBumpUp = 0.00001
-SWEP.VisualRecoilPositionBumpUpHipFire = 0.001
+SWEP.VisualRecoilPositionBumpUp = -0.15
+SWEP.VisualRecoilPositionBumpUpHipFire = -0.09
 
 SWEP.RecoilKick = 0.05
 SWEP.RecoilKickDamping = 10
@@ -193,7 +193,7 @@ SWEP.TracerColor = Color(255, 225, 200)
 --          Positions and offsets
 
 SWEP.IronSights = {
-    Pos = Vector(-4.28-0.04, -5, 0.3),
+    Pos = Vector(-4.28-0.04, -8, 0.3),
     Ang = Angle(0, 0, 0),
     Midpoint = { Pos = Vector(-1, 0, 8), Ang = Angle(0, 0, -145) },
     Magnification = 1.1,
@@ -247,6 +247,7 @@ SWEP.CamQCA_Mult = 1
 SWEP.CamQCA_Mult_ADS = 0.1
 
 SWEP.MuzzleParticle = "muzzleflash_pistol_deagle"
+SWEP.AfterShotParticle = "barrel_smoke"
 
 SWEP.CaseEffectQCA = 2
 SWEP.ShellModel = "models/weapons/arc9/darsu_eft/shells/127x55.mdl"

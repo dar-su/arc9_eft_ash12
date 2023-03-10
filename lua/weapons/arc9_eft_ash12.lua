@@ -98,9 +98,9 @@ SWEP.RecoilSide = 0.7
 SWEP.RecoilRandomUp = 0.9
 SWEP.RecoilRandomSide = 0.8
 
-SWEP.ViewRecoil = true
+SWEP.ViewRecoil = false 
 -- SWEP.ViewRecoil = false 
-SWEP.ViewRecoilUpMult = 2
+SWEP.ViewRecoilUpMult = 3
 SWEP.ViewRecoilUpMultMultHipFire = 2
 SWEP.ViewRecoilSideMult = -4
 SWEP.ViewRecoilSideMultMultHipFire = -2
@@ -115,26 +115,26 @@ SWEP.VisualRecoil = 1
 SWEP.VisualRecoilMultHipFire = 0.3
 SWEP.VisualRecoilMultSights = 0.3
 
-SWEP.VisualRecoilCenter = Vector(2, 11, 2)
-SWEP.VisualRecoilUp = 52 -- Vertical tilt
-SWEP.VisualRecoilSide = 0.4 -- Horizontal tilt
+SWEP.VisualRecoilCenter = Vector(2, 14, 2)
+SWEP.VisualRecoilUp = 75 -- Vertical tilt
+SWEP.VisualRecoilSide = 1 -- Horizontal tilt
 SWEP.VisualRecoilRoll = 25 -- Roll tilt
 
-SWEP.VisualRecoilPunch = 9 -- How far back visual recoil moves the gun
-SWEP.VisualRecoilPunchMultSights = 0.5 -- How far back visual recoil moves the gun
+SWEP.VisualRecoilPunch = 2 -- How far back visual recoil moves the gun
+SWEP.VisualRecoilPunchMultHipFire = 3 -- How far back visual recoil moves the gun
 
 
-SWEP.VisualRecoilSpringPunchDamping = 7
-SWEP.VisualRecoilDampingConst = 35
-SWEP.VisualRecoilSpringMagnitude = 1
-SWEP.VisualRecoilPositionBumpUp = -0.01
+SWEP.VisualRecoilSpringPunchDamping = 20 / 2.67
+SWEP.VisualRecoilDampingConst = 150 * 1.67
+SWEP.VisualRecoilSpringMagnitude = 2 / 1.67
+SWEP.VisualRecoilPositionBumpUp = -0.02
 SWEP.VisualRecoilPositionBumpUpHipFire = 0.001
 
 
 SWEP.VisualRecoilThinkFunc = function(springconstant, VisualRecoilSpringMagnitude, PUNCH_DAMPING, recamount)
     if recamount > 3 then
         recamount = math.Clamp((recamount - 3) / 33, 0, 1)
-        return springconstant * math.max(1, 20 * recamount), VisualRecoilSpringMagnitude * 1, PUNCH_DAMPING * 1
+        return springconstant * math.max(1, 20 * recamount), VisualRecoilSpringMagnitude * 1, PUNCH_DAMPING * 0.8
     end
     return springconstant, VisualRecoilSpringMagnitude, PUNCH_DAMPING
 end
@@ -144,7 +144,7 @@ SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount)
     if recamount > 2 then
         recamount = 1.65 - math.Clamp((recamount - 2) / 2, 0, 1)
         
-        return up * recamount, side * 1.5, roll, punch * 0.9
+        return up * recamount, side * 1.3, roll, punch * 0.9
     end
     return up, side, roll, punch
 end
@@ -289,6 +289,7 @@ SWEP.CamQCA_Mult = 0.3
 SWEP.CamQCA_Mult_ADS = 0.05
 
 SWEP.MuzzleParticle = "muzzleflash_g3"
+SWEP.AfterShotParticle = "barrel_smoke"
 
 SWEP.CaseEffectQCA = 2
 SWEP.ShellModel = "models/weapons/arc9/darsu_eft/shells/127x55.mdl"
