@@ -385,7 +385,6 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
 
         ending = rand
                 
-        if empty then ending = ending .. "_empty" end
 
 
         if ending == 2 and ARC9EFTBASE and SERVER then
@@ -405,6 +404,8 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
         return anim .. ending
     end
     
+    -- if empty then ending = ending .. "_empty" end
+
     if anim == "reload" or anim == "reload_empty" then -- reload
         if empty then ending = ending .. "_empty" end
 
@@ -1014,7 +1015,7 @@ SWEP.Attachments = {
     
     {
         PrintName = "Custom slot",
-        Category = {"eft_custom_slot", "eft_custom_slot_ash12"},        
+        Category = {"eft_custom_slot", "eft_custom_slot_ash12"},
         Bone = "mod_sight_rear",
         Pos = Vector(0, -7, 0),
         Ang = Angle(0, -90, 0),
