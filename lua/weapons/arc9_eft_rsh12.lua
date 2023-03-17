@@ -894,10 +894,10 @@ SWEP.Attachments = {
     
     {
         PrintName = "Custom slot",
-        Category = {"eft_custom_slot", "eft_custom_slot_rsh12"},        
-        Bone = "mod_tactical",
-        Pos = Vector(0, -3, 0),
-        Ang = Angle(0, -90, 0),
+        Category = {"eft_custom_slot", "eft_custom_slot_rsh12"}, -- , "eft_ak_gp34"
+        Bone = "weapon",
+        Pos = Vector(0, 26.5, 0.2),
+        Ang = Angle(0, 90, 0),
         Icon_Offset = Vector(0, 0, 0),
         -- CosmeticOnly = true,
     },
