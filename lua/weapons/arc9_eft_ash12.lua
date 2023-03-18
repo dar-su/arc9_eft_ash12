@@ -156,12 +156,6 @@ SWEP.RecoilKick = 0.05
 SWEP.RecoilKickDamping = 10
 
 
---          Heating
-
-SWEP.Overheat = true
-SWEP.HeatCapacity = 75
-SWEP.HeatDissipation = 3
-SWEP.HeatLockout = false
 
 
 --          Firemodes
@@ -222,11 +216,11 @@ SWEP.TracerColor = Color(255, 225, 200)
 
 SWEP.Malfunction = true 
 SWEP.MalfunctionNeverLastShoot = true 
-SWEP.MalfunctionMeanShotsToFail = 100*2
--- SWEP.MalfunctionMeanShotsToFailMultHot = -0.1*2
+SWEP.MalfunctionMeanShotsToFail = 150*2
+SWEP.MalfunctionMeanShotsToFailMultHot = -0.1*2
 SWEP.Overheat = true
 SWEP.HeatCapacity = 120
-SWEP.HeatDissipation = 4
+SWEP.HeatDissipation = 1.5
 SWEP.HeatPerShot = 1
 SWEP.HeatLockout = false
 
@@ -298,7 +292,7 @@ SWEP.ShellSounds = { "weapons/darsu_eft/shells/heavy_shell_concrete1.wav", "weap
 "weapons/darsu_eft/shells/heavy_shell_concrete1.wav", "weapons/darsu_eft/shells/heavy_shell_concrete2.wav", "weapons/darsu_eft/shells/heavy_shell_concrete3.wav" } -- repeat cuz fuck gmod 
 
 SWEP.ShellScale = 1
-SWEP.ShellCorrectAng = Angle(0, 0, 0)
+SWEP.ShellCorrectAng = Angle(0, 180, 180)
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
 
 SWEP.BulletBones = {
