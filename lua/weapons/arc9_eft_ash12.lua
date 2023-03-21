@@ -190,8 +190,13 @@ SWEP.Sway = 1
 SWEP.SwayMove = 0.5
 SWEP.SwayMidAir = 10
 SWEP.SwayMultCrouch = 0.75
-SWEP.SwayMultHipFire = 0.01
-SWEP.SwayMultSights = 0.15
+SWEP.SwayMultHipFire = 0.2
+SWEP.SwayMultSights = 0.25
+SWEP.HoldBreathTime = 40
+SWEP.RestoreBreathTime = 30
+SWEP.BreathInSound = false 
+SWEP.BreathOutSound = false
+SWEP.BreathRunOutSound = "arc9_eft_shared/bear3_breath_sprint.wav"
 
 
 --          Generic stats
@@ -235,6 +240,7 @@ SWEP.IronSights = {
     Ang = Angle(0, 0.09, 0),
     Midpoint = { Pos = Vector(-1, 0, 8), Ang = Angle(0, 0, -145) },
     Magnification = 1.1,
+    ViewModelFOV = 54
 }
 
 SWEP.ActivePos = Vector(-0.7, -3.1, -.35)
@@ -1021,6 +1027,8 @@ SWEP.Attachments = {
 SWEP.EFTErgo = 55
 if ARC9EFTBASE then
     SWEP.AimDownSightsTimeHook = ARC9EFT.ErgoHook
+    SWEP.HoldBreathTimeHook = ARC9EFT.ErgoBreathHook
 else
     print("Dum! install arc9 eft shared!!!!!!!!!!!!!!")
 end
+SWEP.AimDownSightsTimeMultShooting = 4
