@@ -130,12 +130,13 @@ SWEP.VisualRecoilDampingConst = 150 * 1.67
 SWEP.VisualRecoilSpringMagnitude = 2 / 1.67
 SWEP.VisualRecoilPositionBumpUp = -0.02
 SWEP.VisualRecoilPositionBumpUpHipFire = 0.001
+SWEP.VisualRecoilPositionBumpUpRTScope = 0
 
 
 SWEP.VisualRecoilThinkFunc = function(springconstant, VisualRecoilSpringMagnitude, PUNCH_DAMPING, recamount)
     if recamount > 3 then
         recamount = math.Clamp((recamount - 3) / 33, 0, 1)
-        return springconstant * math.max(1, 20 * recamount), VisualRecoilSpringMagnitude * 1, PUNCH_DAMPING * 0.8
+        return springconstant * math.max(1, 20 * recamount), VisualRecoilSpringMagnitude * 0.82, PUNCH_DAMPING * 0.8
     end
     return springconstant, VisualRecoilSpringMagnitude, PUNCH_DAMPING
 end
