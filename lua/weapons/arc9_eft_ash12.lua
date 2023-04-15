@@ -295,10 +295,6 @@ SWEP.AfterShotParticle = "barrel_smoke"
 
 SWEP.CaseEffectQCA = 2
 SWEP.ShellModel = "models/weapons/arc9/darsu_eft/shells/127x55.mdl"
-SWEP.ShellSounds = { "weapons/darsu_eft/shells/heavy_shell_concrete1.wav", "weapons/darsu_eft/shells/heavy_shell_concrete2.wav", "weapons/darsu_eft/shells/heavy_shell_concrete3.wav", 
-"weapons/darsu_eft/shells/heavy_shell_concrete1.wav", "weapons/darsu_eft/shells/heavy_shell_concrete2.wav", "weapons/darsu_eft/shells/heavy_shell_concrete3.wav",
-"weapons/darsu_eft/shells/heavy_shell_concrete1.wav", "weapons/darsu_eft/shells/heavy_shell_concrete2.wav", "weapons/darsu_eft/shells/heavy_shell_concrete3.wav" } -- repeat cuz fuck gmod 
-
 SWEP.ShellScale = 1
 SWEP.ShellCorrectAng = Angle(0, 180, 180)
 SWEP.ShellPhysBox = Vector(0.5, 0.5, 2)
@@ -1037,3 +1033,6 @@ else
     print("Dum! install arc9 eft shared!!!!!!!!!!!!!!")
 end
 SWEP.AimDownSightsTimeMultShooting = 4
+
+SWEP.RicochetSounds = ARC9EFT.RicochetSounds
+SWEP.ShellSounds = ARC9EFT.ShellsHeavy
