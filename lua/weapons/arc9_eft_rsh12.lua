@@ -3,18 +3,23 @@ AddCSLuaFile()
 SWEP.Base = "arc9_base"
 SWEP.Spawnable = true
 SWEP.Category = "ARC9 - Escape From Tarkov"
-SWEP.SubCategory = "Pistols"
-SWEP.Credits = { Author1 = "Darsu", Assets2 = "Battlestate Games LTD", General_help3 = "Mal0", ARC9_Base4 = "Arctic" }
+SWEP.SubCategory = ARC9:GetPhrase("eft_subcat_pist")
+SWEP.Credits = { 
+    [ARC9:GetPhrase("eft_trivia_author") .. "1"] = "Darsu", 
+    [ARC9:GetPhrase("eft_trivia_assets") .. "2"] = "Battlestate Games LTD", 
+    [ARC9:GetPhrase("eft_trivia_help") .. "3"] = "Mal0", 
+    [ARC9:GetPhrase("eft_trivia_arc9") .. "4"] = "Arctic",
+}
 
-SWEP.PrintName = "RSh-12"
+SWEP.PrintName = ARC9:GetPhrase("eft_weapon_rsh12")
 
-SWEP.Class = "Revolver"
+SWEP.Class = ARC9:GetPhrase("eft_class_weapon_revol")
 SWEP.Trivia = {
-    Manufacturer1 = "KBP Instrument Design Bureau",
-    Calibre2 = "12.7x55",
-    Action3 = "Blow",
-    Country4 = "Russian Federation",
-    Year5 = "2000"
+    [ARC9:GetPhrase("eft_trivia_manuf") .. "1"] = ARC9:GetPhrase("eft_trivia_manuf_kbp"),
+    [ARC9:GetPhrase("eft_trivia_cal") .. "2"] = "12.7x55",
+    [ARC9:GetPhrase("eft_trivia_act") .. "3"]= ARC9:GetPhrase("eft_trivia_act_blow"),
+    [ARC9:GetPhrase("eft_trivia_country") .. "4"] = ARC9:GetPhrase("eft_trivia_country_rus"),
+    [ARC9:GetPhrase("eft_trivia_year") .. "5"] = "2000"
 }
 
 SWEP.Description = [[The powerful RSh-12 (Revolver Shturmovoy 12 - "Assault Revolver 12") revolver, manufactured by KBP Instrument Design Bureau, designed for use by special forces. Despite the powerful 12.7x55 mm caliber, RSh-12 has less recoil than many other large-caliber revolvers and pistols, since the shot is fired from the bottom chamber of the cylinder.]]
