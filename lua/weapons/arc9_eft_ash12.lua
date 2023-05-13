@@ -908,6 +908,12 @@ function SWEP:HookP_BlockFire()
     end
 end
 
+function SWEP:Hook_RedPrintName()
+        if  !self:GetValue("HasAmmoooooooo") then -- lol no atts needed
+            return true 
+    end
+end
+
 SWEP.AttachmentElements = {
     ["eft_ash12_hg_std"] = { Bodygroups = { {1, 1} } },
     ["eft_ash12_muzzle_std"] = { Bodygroups = { {2, 1} } },

@@ -830,6 +830,12 @@ function SWEP:HookP_BlockFire()
             return true 
     end
 end
+function SWEP:Hook_RedPrintName()
+    if  !self:GetValue("HasMag") or 
+        !self:GetValue("HasAmmoooooooo") then
+            return true 
+    end
+end
 
 SWEP.AttachmentElements = {
     ["eft_rsh12_pgrip_std"] = { Bodygroups = { {2, 1} } },
