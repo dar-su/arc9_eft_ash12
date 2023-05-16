@@ -179,7 +179,7 @@ SWEP.HoldBreathTime = 40
 SWEP.RestoreBreathTime = 30
 SWEP.BreathInSound = false 
 SWEP.BreathOutSound = false
-SWEP.BreathRunOutSound = "arc9_eft_shared/bear3_breath_sprint.wav"
+SWEP.BreathRunOutSound = "arc9_eft_shared/bear3_breath_sprint.ogg"
 
 --          Generic stats
 
@@ -287,18 +287,18 @@ SWEP.ShootPitchVariation = 0
 SWEP.DistantShootVolume = 0.05
 SWEP.DistantShootVolumeActual = 0.05
 
-SWEP.ShootSound = path .. "rsh_12_outdoor_close_oneshot.wav"
-SWEP.ShootSoundIndoor = path .. "rsh_12_indoor_close_oneshot.wav"
-SWEP.DistantShootSound = path .. "rsh_12_outdoor_distant_oneshot.wav"
-SWEP.DistantShootSoundIndoor = path .. "rsh_12_indoor_distant_oneshot.wav"
+SWEP.ShootSound = path .. "rsh_12_outdoor_close_oneshot.ogg"
+SWEP.ShootSoundIndoor = path .. "rsh_12_indoor_close_oneshot.ogg"
+SWEP.DistantShootSound = path .. "rsh_12_outdoor_distant_oneshot.ogg"
+SWEP.DistantShootSoundIndoor = path .. "rsh_12_indoor_distant_oneshot.ogg"
 
 SWEP.FiremodeSound = "" -- we will have own in sound tables
 SWEP.ToggleAttSound = "" -- we will have own in sound tables
 SWEP.DryFireSound = "" -- we will have own in sound tables
 
 
-SWEP.EnterSightsSound = "arc9_eft_shared/weap_in.wav"
-SWEP.ExitSightsSound = "arc9_eft_shared/weap_handoff.wav"
+SWEP.EnterSightsSound = "arc9_eft_shared/weap_in.ogg"
+SWEP.ExitSightsSound = "arc9_eft_shared/weap_handoff.ogg"
 
 
 
@@ -453,17 +453,17 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
 end
 
 
-local randspin = {"arc9_eft_shared/weapon_generic_rifle_spin1.wav","arc9_eft_shared/weapon_generic_rifle_spin2.wav","arc9_eft_shared/weapon_generic_rifle_spin3.wav","arc9_eft_shared/weapon_generic_rifle_spin4.wav","arc9_eft_shared/weapon_generic_rifle_spin5.wav","arc9_eft_shared/weapon_generic_rifle_spin6.wav","arc9_eft_shared/weapon_generic_rifle_spin7.wav","arc9_eft_shared/weapon_generic_rifle_spin8.wav","arc9_eft_shared/weapon_generic_rifle_spin9.wav","arc9_eft_shared/weapon_generic_rifle_spin10.wav"}
-local pouchin = {"arc9_eft_shared/generic_mag_pouch_in1.wav","arc9_eft_shared/generic_mag_pouch_in2.wav","arc9_eft_shared/generic_mag_pouch_in3.wav","arc9_eft_shared/generic_mag_pouch_in4.wav","arc9_eft_shared/generic_mag_pouch_in5.wav","arc9_eft_shared/generic_mag_pouch_in6.wav","arc9_eft_shared/generic_mag_pouch_in7.wav"}
-local pouchout = {"arc9_eft_shared/generic_mag_pouch_out1.wav","arc9_eft_shared/generic_mag_pouch_out2.wav","arc9_eft_shared/generic_mag_pouch_out3.wav","arc9_eft_shared/generic_mag_pouch_out4.wav","arc9_eft_shared/generic_mag_pouch_out5.wav","arc9_eft_shared/generic_mag_pouch_out6.wav","arc9_eft_shared/generic_mag_pouch_out7.wav"}
-local switchi = { { s = {"arc9_eft_shared/weapon_light_switcher1.wav", "arc9_eft_shared/weapon_light_switcher2.wav", "arc9_eft_shared/weapon_light_switcher3.wav"}, t = 0 } }
+local randspin = {"arc9_eft_shared/weapon_generic_rifle_spin1.ogg","arc9_eft_shared/weapon_generic_rifle_spin2.ogg","arc9_eft_shared/weapon_generic_rifle_spin3.ogg","arc9_eft_shared/weapon_generic_rifle_spin4.ogg","arc9_eft_shared/weapon_generic_rifle_spin5.ogg","arc9_eft_shared/weapon_generic_rifle_spin6.ogg","arc9_eft_shared/weapon_generic_rifle_spin7.ogg","arc9_eft_shared/weapon_generic_rifle_spin8.ogg","arc9_eft_shared/weapon_generic_rifle_spin9.ogg","arc9_eft_shared/weapon_generic_rifle_spin10.ogg"}
+local pouchin = {"arc9_eft_shared/generic_mag_pouch_in1.ogg","arc9_eft_shared/generic_mag_pouch_in2.ogg","arc9_eft_shared/generic_mag_pouch_in3.ogg","arc9_eft_shared/generic_mag_pouch_in4.ogg","arc9_eft_shared/generic_mag_pouch_in5.ogg","arc9_eft_shared/generic_mag_pouch_in6.ogg","arc9_eft_shared/generic_mag_pouch_in7.ogg"}
+local pouchout = {"arc9_eft_shared/generic_mag_pouch_out1.ogg","arc9_eft_shared/generic_mag_pouch_out2.ogg","arc9_eft_shared/generic_mag_pouch_out3.ogg","arc9_eft_shared/generic_mag_pouch_out4.ogg","arc9_eft_shared/generic_mag_pouch_out5.ogg","arc9_eft_shared/generic_mag_pouch_out6.ogg","arc9_eft_shared/generic_mag_pouch_out7.ogg"}
+local switchi = { { s = {"arc9_eft_shared/weapon_light_switcher1.ogg", "arc9_eft_shared/weapon_light_switcher2.ogg", "arc9_eft_shared/weapon_light_switcher3.ogg"}, t = 0 } }
 
 local magcheck = {
     { s = randspin, t = 0 },
-    { s = path .. "rhino_drum_releasebutton.wav", t = 0.05 },
-    { s = path .. "rsh_12_reload_start.wav", t = 4/24 },
+    { s = path .. "rhino_drum_releasebutton.ogg", t = 0.05 },
+    { s = path .. "rsh_12_reload_start.ogg", t = 4/24 },
     { s = randspin, t = 35/24 },
-    { s = path .. "rsh_12_reload_end.wav", t = 49/24 },
+    { s = path .. "rsh_12_reload_end.ogg", t = 49/24 },
     { s = randspin, t = 63/24 },
 }
 local look = {
@@ -475,18 +475,18 @@ local look = {
 }
 local cock = {
     { s = randspin, t = 0 },
-    { s = path .. "rsh_12_cock.wav", t = 5/24 },
+    { s = path .. "rsh_12_cock.ogg", t = 5/24 },
 }
 
 local sg_start1 = {
     { s = randspin, t = 0 },  
-    { s = path .. "rhino_drum_releasebutton.wav", t = 2/26 },
-    { s = path .. "rsh_12_reload_start.wav", t = 4/26 },
+    { s = path .. "rhino_drum_releasebutton.ogg", t = 2/26 },
+    { s = path .. "rsh_12_reload_start.ogg", t = 4/26 },
     { s = randspin, t = 21/26 },  
-    { s = path .. "rsh_12_shell_out.wav", t = 43/26 },
-    { s = path .. "rsh_12_shell_out.wav", t = 69/26 },
-    { s = path .. "rsh_12_shell_out.wav", t = 93/26 },
-    { s = path .. "rsh_12_shell_out.wav", t = 117/26 },
+    { s = path .. "rsh_12_shell_out.ogg", t = 43/26 },
+    { s = path .. "rsh_12_shell_out.ogg", t = 69/26 },
+    { s = path .. "rsh_12_shell_out.ogg", t = 93/26 },
+    { s = path .. "rsh_12_shell_out.ogg", t = 117/26 },
     {shelleject = true, att = 2, t = 50/26},
     {shelleject = true, att = 2, t = 75/26},
     {shelleject = true, att = 2, t = 98/26},
@@ -494,33 +494,33 @@ local sg_start1 = {
 }
 local sg_insert1 = {
     { s = randspin, t = 0/28 },
-    { s = path .. "rsh_12_ammo_in.wav", t = 14/28 },
+    { s = path .. "rsh_12_ammo_in.ogg", t = 14/28 },
 }
 local sg_insert2 = {
-    { s = path .. "rsh_12_ammo_in.wav", t = 13/28 },
+    { s = path .. "rsh_12_ammo_in.ogg", t = 13/28 },
 }
 local sg_insert3 = {
     { s = randspin, t = 0/28 },
-    { s = path .. "rsh_12_ammo_in.wav", t = 13/28 },
+    { s = path .. "rsh_12_ammo_in.ogg", t = 13/28 },
 }
 local sg_insert4 = {
-    { s = path .. "rsh_12_ammo_in.wav", t = 12/28 },
+    { s = path .. "rsh_12_ammo_in.ogg", t = 12/28 },
 }
 local sg_end = {
     { s = randspin, t = 6/26 },
-    { s = path .. "rsh_12_reload_end.wav", t = 6/26 },
+    { s = path .. "rsh_12_reload_end.ogg", t = 6/26 },
     { s = randspin, t = 22/26 },
 }
 
 local ff_start5 = {
     { s = randspin, t = 2/26 },  
-    { s = path .. "rhino_drum_releasebutton.wav", t = 9/26 },
-    { s = path .. "rsh_12_reload_start.wav", t = 12/26 },
+    { s = path .. "rhino_drum_releasebutton.ogg", t = 9/26 },
+    { s = path .. "rsh_12_reload_start.ogg", t = 12/26 },
     { s = randspin, t = 22/26 },  
-    { s = path .. "rhino_drum_extractor.wav", t = 18/26 },
-    { s = path .. "rsh_12_purge_shells.wav", t = 27/26 },
+    { s = path .. "rhino_drum_extractor.ogg", t = 18/26 },
+    { s = path .. "rsh_12_purge_shells.ogg", t = 27/26 },
     { s = randspin, t = 36/26 },  
-    { s = "arc9_eft_shared/weap_magin_sbrosnik.wav", t = 49/26 },
+    { s = "arc9_eft_shared/weap_magin_sbrosnik.ogg", t = 49/26 },
     {shelleject = true, att = 2, t = 1.6},
     {shelleject = true, att = 2, t = 1.65},
     {shelleject = true, att = 2, t = 1.7},
@@ -529,13 +529,13 @@ local ff_start5 = {
 }
 local ff_start4 = {
     { s = randspin, t = 2/26 },  
-    { s = path .. "rhino_drum_releasebutton.wav", t = 9/26 },
-    { s = path .. "rsh_12_reload_start.wav", t = 12/26 },
+    { s = path .. "rhino_drum_releasebutton.ogg", t = 9/26 },
+    { s = path .. "rsh_12_reload_start.ogg", t = 12/26 },
     { s = randspin, t = 22/26 },  
-    { s = path .. "rhino_drum_extractor.wav", t = 18/26 },
-    { s = path .. "rsh_12_purge_shells.wav", t = 27/26 },
+    { s = path .. "rhino_drum_extractor.ogg", t = 18/26 },
+    { s = path .. "rsh_12_purge_shells.ogg", t = 27/26 },
     { s = randspin, t = 36/26 },  
-    { s = "arc9_eft_shared/weap_magin_sbrosnik.wav", t = 49/26 },
+    { s = "arc9_eft_shared/weap_magin_sbrosnik.ogg", t = 49/26 },
     {shelleject = true, att = 2, t = 1.6},
     {shelleject = true, att = 2, t = 1.65},
     {shelleject = true, att = 2, t = 1.7},
@@ -543,77 +543,77 @@ local ff_start4 = {
 }
 local ff_start3 = {
     { s = randspin, t = 2/26 },  
-    { s = path .. "rhino_drum_releasebutton.wav", t = 9/26 },
-    { s = path .. "rsh_12_reload_start.wav", t = 12/26 },
+    { s = path .. "rhino_drum_releasebutton.ogg", t = 9/26 },
+    { s = path .. "rsh_12_reload_start.ogg", t = 12/26 },
     { s = randspin, t = 22/26 },  
-    { s = path .. "rhino_drum_extractor.wav", t = 18/26 },
-    { s = path .. "rsh_12_purge_shells.wav", t = 27/26 },
+    { s = path .. "rhino_drum_extractor.ogg", t = 18/26 },
+    { s = path .. "rsh_12_purge_shells.ogg", t = 27/26 },
     { s = randspin, t = 36/26 },  
-    { s = "arc9_eft_shared/weap_magin_sbrosnik.wav", t = 49/26 },
+    { s = "arc9_eft_shared/weap_magin_sbrosnik.ogg", t = 49/26 },
     {shelleject = true, att = 2, t = 1.6},
     {shelleject = true, att = 2, t = 1.65},
     {shelleject = true, att = 2, t = 1.7},
 }
 local ff_start2 = {
     { s = randspin, t = 2/26 },  
-    { s = path .. "rhino_drum_releasebutton.wav", t = 9/26 },
-    { s = path .. "rsh_12_reload_start.wav", t = 12/26 },
+    { s = path .. "rhino_drum_releasebutton.ogg", t = 9/26 },
+    { s = path .. "rsh_12_reload_start.ogg", t = 12/26 },
     { s = randspin, t = 22/26 },  
-    { s = path .. "rhino_drum_extractor.wav", t = 18/26 },
-    { s = path .. "rsh_12_purge_shells.wav", t = 27/26 },
+    { s = path .. "rhino_drum_extractor.ogg", t = 18/26 },
+    { s = path .. "rsh_12_purge_shells.ogg", t = 27/26 },
     { s = randspin, t = 36/26 },  
-    { s = "arc9_eft_shared/weap_magin_sbrosnik.wav", t = 49/26 },
+    { s = "arc9_eft_shared/weap_magin_sbrosnik.ogg", t = 49/26 },
     {shelleject = true, att = 2, t = 1.6},
     {shelleject = true, att = 2, t = 1.65},
 }
 local ff_start1 = {
     { s = randspin, t = 2/26 },  
-    { s = path .. "rhino_drum_releasebutton.wav", t = 9/26 },
-    { s = path .. "rsh_12_reload_start.wav", t = 12/26 },
+    { s = path .. "rhino_drum_releasebutton.ogg", t = 9/26 },
+    { s = path .. "rsh_12_reload_start.ogg", t = 12/26 },
     { s = randspin, t = 22/26 },  
-    { s = path .. "rhino_drum_extractor.wav", t = 18/26 },
-    { s = path .. "rsh_12_purge_shells.wav", t = 27/26 },
+    { s = path .. "rhino_drum_extractor.ogg", t = 18/26 },
+    { s = path .. "rsh_12_purge_shells.ogg", t = 27/26 },
     { s = randspin, t = 36/26 },  
-    { s = "arc9_eft_shared/weap_magin_sbrosnik.wav", t = 49/26 },
+    { s = "arc9_eft_shared/weap_magin_sbrosnik.ogg", t = 49/26 },
     {shelleject = true, att = 2, t = 1.6},
 }
 local ff_insert1 = {
     { s = randspin, t = 0/30 },
-    { s = path .. "rsh_12_ammo_in.wav", t = 17/30 },
+    { s = path .. "rsh_12_ammo_in.ogg", t = 17/30 },
 }
 local ff_insert2 = {
-    { s = path .. "rsh_12_ammo_in.wav", t = 16/30 },
+    { s = path .. "rsh_12_ammo_in.ogg", t = 16/30 },
 }
 local ff_insert3 = {
     { s = randspin, t = 0/30 },
-    { s = path .. "rsh_12_ammo_in.wav", t = 14/30 },
+    { s = path .. "rsh_12_ammo_in.ogg", t = 14/30 },
 }
 local ff_insert4 = {
-    { s = path .. "rsh_12_ammo_in.wav", t = 13/30 },
+    { s = path .. "rsh_12_ammo_in.ogg", t = 13/30 },
 }
 local ff_insert5 = {
-    { s = path .. "rsh_12_ammo_in.wav", t = 5/30 },
+    { s = path .. "rsh_12_ammo_in.ogg", t = 5/30 },
     { s = randspin, t = 9/30 },
 }
 local ff_end1 = {
     { s = randspin, t = 3/26 },
-    { s = path .. "rsh_12_reload_end.wav", t = 24/26 },
+    { s = path .. "rsh_12_reload_end.ogg", t = 24/26 },
     { s = randspin, t = 41/26 },
 }
 local ff_end5 = {
-    { s = path .. "rsh_12_reload_end.wav", t = 6/26 },
+    { s = path .. "rsh_12_reload_end.ogg", t = 6/26 },
     { s = randspin, t = 24/26 },
 }
 
-local drawa = { { s = "arc9_eft_shared/pm_draw.wav", t = 0 } }
-local holstera = { { s = "arc9_eft_shared/pm_holster.wav", t = 0 } }
-local fireda = { { s = path .. "rhino_hammer_release.wav", t = 0.06 } }
-local firesa = { { s = path .. "rhino_hammer_release.wav", t = 0 } }
-local firedadry = { { s = path .. "rhino_hammer_release.wav", t = 0.17 } }
+local drawa = { { s = "arc9_eft_shared/pm_draw.ogg", t = 0 } }
+local holstera = { { s = "arc9_eft_shared/pm_holster.ogg", t = 0 } }
+local fireda = { { s = path .. "rhino_hammer_release.ogg", t = 0.06 } }
+local firesa = { { s = path .. "rhino_hammer_release.ogg", t = 0 } }
+local firedadry = { { s = path .. "rhino_hammer_release.ogg", t = 0.17 } }
 local firesadry = { 
-    { s = path .. "rhino_hammer_release.wav", t = 0 },
+    { s = path .. "rhino_hammer_release.ogg", t = 0 },
     { s = randspin, t = 0.25 },
-    { s = path .. "rsh_12_cock.wav", t = 0.25+5/24 },
+    { s = path .. "rsh_12_cock.ogg", t = 0.25+5/24 },
  }
 
 SWEP.Animations = {

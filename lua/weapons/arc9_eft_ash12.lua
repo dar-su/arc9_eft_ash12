@@ -202,7 +202,7 @@ SWEP.HoldBreathTime = 40
 SWEP.RestoreBreathTime = 30
 SWEP.BreathInSound = false 
 SWEP.BreathOutSound = false
-SWEP.BreathRunOutSound = "arc9_eft_shared/bear3_breath_sprint.wav"
+SWEP.BreathRunOutSound = "arc9_eft_shared/bear3_breath_sprint.ogg"
 
 
 --          Generic stats
@@ -322,30 +322,30 @@ SWEP.ShootPitchVariation = 0
 SWEP.DistantShootVolume = 0.05
 SWEP.DistantShootVolumeActual = 0.05
 
-SWEP.ShootSound = { path .. "fire/ash12_outdoor_close_1.wav", path .. "fire/ash12_outdoor_close_2.wav", path .. "fire/ash12_outdoor_close_3.wav" }
-SWEP.LayerSound = path .. "fire/ash12_outdoor_close_loop_tail.wav"
+SWEP.ShootSound = { path .. "fire/ash12_outdoor_close_1.ogg", path .. "fire/ash12_outdoor_close_2.ogg", path .. "fire/ash12_outdoor_close_3.ogg" }
+SWEP.LayerSound = path .. "fire/ash12_outdoor_close_loop_tail.ogg"
 
-SWEP.ShootSoundSilenced = { path .. "fire/ash12_outdoor_close_silenced_1.wav", path .. "fire/ash12_outdoor_close_silenced_2.wav", path .. "fire/ash12_outdoor_close_silenced_3.wav" }
-SWEP.LayerSoundSilenced = path .. "fire/ash12_outdoor_close_loop_silenced_tail.wav"
+SWEP.ShootSoundSilenced = { path .. "fire/ash12_outdoor_close_silenced_1.ogg", path .. "fire/ash12_outdoor_close_silenced_2.ogg", path .. "fire/ash12_outdoor_close_silenced_3.ogg" }
+SWEP.LayerSoundSilenced = path .. "fire/ash12_outdoor_close_loop_silenced_tail.ogg"
 
-SWEP.ShootSoundIndoor = { path .. "fire/ash12_indoor_close_1.wav", path .. "fire/ash12_indoor_close_2.wav", path .. "fire/ash12_indoor_close_3.wav" }
-SWEP.LayerSoundIndoor = path .. "fire/ash12_indoor_close_loop_tail.wav"
+SWEP.ShootSoundIndoor = { path .. "fire/ash12_indoor_close_1.ogg", path .. "fire/ash12_indoor_close_2.ogg", path .. "fire/ash12_indoor_close_3.ogg" }
+SWEP.LayerSoundIndoor = path .. "fire/ash12_indoor_close_loop_tail.ogg"
 
-SWEP.ShootSoundSilencedIndoor = { path .. "fire/ash12_indoor_close_silenced_1.wav", path .. "fire/ash12_indoor_close_silenced_2.wav", path .. "fire/ash12_indoor_close_silenced_3.wav" }
-SWEP.LayerSoundSilencedIndoor = path .. "fire/ash12_indoor_close_loop_silenced_tail.wav"
+SWEP.ShootSoundSilencedIndoor = { path .. "fire/ash12_indoor_close_silenced_1.ogg", path .. "fire/ash12_indoor_close_silenced_2.ogg", path .. "fire/ash12_indoor_close_silenced_3.ogg" }
+SWEP.LayerSoundSilencedIndoor = path .. "fire/ash12_indoor_close_loop_silenced_tail.ogg"
 
-SWEP.DistantShootSound = path .. "fire/ash12_outdoor_distant_1.wav"
-SWEP.DistantShootSoundSilenced = path .. "fire/ash12_outdoor_distant_silenced_1.wav"
-SWEP.DistantShootSoundIndoor = path .. "fire/ash12_indoor_distant_1.wav"
-SWEP.DistantShootSoundSilencedIndoor = path .. "fire/ash12_indoor_distant_silenced_1.wav"
+SWEP.DistantShootSound = path .. "fire/ash12_outdoor_distant_1.ogg"
+SWEP.DistantShootSoundSilenced = path .. "fire/ash12_outdoor_distant_silenced_1.ogg"
+SWEP.DistantShootSoundIndoor = path .. "fire/ash12_indoor_distant_1.ogg"
+SWEP.DistantShootSoundSilencedIndoor = path .. "fire/ash12_indoor_distant_silenced_1.ogg"
 
 SWEP.FiremodeSound = "" -- we will have own in sound tables
 SWEP.ToggleAttSound = "" -- we will have own in sound tables
 SWEP.DryFireSound = "" -- we will have own in sound tables
 
 
-SWEP.EnterSightsSound = "arc9_eft_shared/weap_in.wav"
-SWEP.ExitSightsSound = "arc9_eft_shared/weap_handoff.wav"
+SWEP.EnterSightsSound = "arc9_eft_shared/weap_in.ogg"
+SWEP.ExitSightsSound = "arc9_eft_shared/weap_handoff.ogg"
 
 
 
@@ -441,25 +441,25 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
 end
 
 
-local randspin = {"arc9_eft_shared/weapon_generic_rifle_spin1.wav","arc9_eft_shared/weapon_generic_rifle_spin2.wav","arc9_eft_shared/weapon_generic_rifle_spin3.wav","arc9_eft_shared/weapon_generic_rifle_spin4.wav","arc9_eft_shared/weapon_generic_rifle_spin5.wav","arc9_eft_shared/weapon_generic_rifle_spin6.wav","arc9_eft_shared/weapon_generic_rifle_spin7.wav","arc9_eft_shared/weapon_generic_rifle_spin8.wav","arc9_eft_shared/weapon_generic_rifle_spin9.wav","arc9_eft_shared/weapon_generic_rifle_spin10.wav"}
-local pouchin = {"arc9_eft_shared/generic_mag_pouch_in1.wav","arc9_eft_shared/generic_mag_pouch_in2.wav","arc9_eft_shared/generic_mag_pouch_in3.wav","arc9_eft_shared/generic_mag_pouch_in4.wav","arc9_eft_shared/generic_mag_pouch_in5.wav","arc9_eft_shared/generic_mag_pouch_in6.wav","arc9_eft_shared/generic_mag_pouch_in7.wav"}
-local pouchout = {"arc9_eft_shared/generic_mag_pouch_out1.wav","arc9_eft_shared/generic_mag_pouch_out2.wav","arc9_eft_shared/generic_mag_pouch_out3.wav","arc9_eft_shared/generic_mag_pouch_out4.wav","arc9_eft_shared/generic_mag_pouch_out5.wav","arc9_eft_shared/generic_mag_pouch_out6.wav","arc9_eft_shared/generic_mag_pouch_out7.wav"}
+local randspin = {"arc9_eft_shared/weapon_generic_rifle_spin1.ogg","arc9_eft_shared/weapon_generic_rifle_spin2.ogg","arc9_eft_shared/weapon_generic_rifle_spin3.ogg","arc9_eft_shared/weapon_generic_rifle_spin4.ogg","arc9_eft_shared/weapon_generic_rifle_spin5.ogg","arc9_eft_shared/weapon_generic_rifle_spin6.ogg","arc9_eft_shared/weapon_generic_rifle_spin7.ogg","arc9_eft_shared/weapon_generic_rifle_spin8.ogg","arc9_eft_shared/weapon_generic_rifle_spin9.ogg","arc9_eft_shared/weapon_generic_rifle_spin10.ogg"}
+local pouchin = {"arc9_eft_shared/generic_mag_pouch_in1.ogg","arc9_eft_shared/generic_mag_pouch_in2.ogg","arc9_eft_shared/generic_mag_pouch_in3.ogg","arc9_eft_shared/generic_mag_pouch_in4.ogg","arc9_eft_shared/generic_mag_pouch_in5.ogg","arc9_eft_shared/generic_mag_pouch_in6.ogg","arc9_eft_shared/generic_mag_pouch_in7.ogg"}
+local pouchout = {"arc9_eft_shared/generic_mag_pouch_out1.ogg","arc9_eft_shared/generic_mag_pouch_out2.ogg","arc9_eft_shared/generic_mag_pouch_out3.ogg","arc9_eft_shared/generic_mag_pouch_out4.ogg","arc9_eft_shared/generic_mag_pouch_out5.ogg","arc9_eft_shared/generic_mag_pouch_out6.ogg","arc9_eft_shared/generic_mag_pouch_out7.ogg"}
 
 local emptyreload0 = {
     { s = randspin, t = 0.17 },   
-    { s = path .. "svd_mag_button.wav", t = 0.54 },
-    { s = path .. "ash12_mag_out.wav", t = 0.6 },
+    { s = path .. "svd_mag_button.ogg", t = 0.54 },
+    { s = path .. "ash12_mag_out.ogg", t = 0.6 },
     { s = randspin, t = 0.96 },   
     { s = pouchout, t = 1.35 },
     { s = randspin, t = 1.69 },   
 
-    { s = path .. "ash12_mag_in.wav", t = 2.18 },
+    { s = path .. "ash12_mag_in.ogg", t = 2.18 },
     { s = randspin, t = 3.05 },   
 
-    { s = path .. "ash12_bolt_handle_grab.wav", t = 3.46 },
-    { s = path .. "ash12_bolt_out.wav", t = 3.62 },
-    { s = path .. "ash12_bolt_in.wav", t = 4 },
-    { s = path .. "ash12_bolt_handle_bounce.wav", t = 4.09 },
+    { s = path .. "ash12_bolt_handle_grab.ogg", t = 3.46 },
+    { s = path .. "ash12_bolt_out.ogg", t = 3.62 },
+    { s = path .. "ash12_bolt_in.ogg", t = 4 },
+    { s = path .. "ash12_bolt_handle_bounce.ogg", t = 4.09 },
     { s = randspin, t = 4.27 },   
 
     {hide = 0, t = 0},
@@ -468,19 +468,19 @@ local emptyreload0 = {
 }
 local emptyreload1 = {
     { s = randspin, t = 0.17 },   
-    { s = path .. "svd_mag_button.wav", t = 0.54 },
-    { s = path .. "ash12_mag_out.wav", t = 0.6 },
+    { s = path .. "svd_mag_button.ogg", t = 0.54 },
+    { s = path .. "ash12_mag_out.ogg", t = 0.6 },
     { s = randspin, t = 0.96 },   
     { s = pouchout, t = 1.35 },
     { s = randspin, t = 1.69+0.1 },   
 
-    { s = path .. "ash12_mag_in.wav", t = 2.18+0.2 },
+    { s = path .. "ash12_mag_in.ogg", t = 2.18+0.2 },
     { s = randspin, t = 3.05+0.2 },   
 
-    { s = path .. "ash12_bolt_handle_grab.wav", t = 3.46+0.2 },
-    { s = path .. "ash12_bolt_out.wav", t = 3.62+0.2 },
-    { s = path .. "ash12_bolt_in.wav", t = 4+0.2 },
-    { s = path .. "ash12_bolt_handle_bounce.wav", t = 4.09+0.2 },
+    { s = path .. "ash12_bolt_handle_grab.ogg", t = 3.46+0.2 },
+    { s = path .. "ash12_bolt_out.ogg", t = 3.62+0.2 },
+    { s = path .. "ash12_bolt_in.ogg", t = 4+0.2 },
+    { s = path .. "ash12_bolt_handle_bounce.ogg", t = 4.09+0.2 },
     { s = randspin, t = 4.27+0.2 },   
 
     {hide = 0, t = 0},
@@ -494,21 +494,21 @@ SWEP.Animations = {
     ["ready"] = {
         Source = {"ready0", "ready1", "ready2"},
         EventTable = {
-            { s = "arc9_eft_shared/weap_in.wav", t = 0 },
+            { s = "arc9_eft_shared/weap_in.ogg", t = 0 },
 
-            { s = path .. "ash12_bolt_handle_grab.wav", t = 0.91 },
-            { s = path .. "ash12_bolt_out.wav", t = 1.09 },
-            { s = path .. "ash12_bolt_in.wav", t = 1.29 },
-            { s = path .. "ash12_bolt_handle_bounce.wav", t = 1.47 },
+            { s = path .. "ash12_bolt_handle_grab.ogg", t = 0.91 },
+            { s = path .. "ash12_bolt_out.ogg", t = 1.09 },
+            { s = path .. "ash12_bolt_in.ogg", t = 1.29 },
+            { s = path .. "ash12_bolt_handle_bounce.ogg", t = 1.47 },
         }, 
         IKTimeLine = {{ t = 0, lhik = 1 }}
     },
 
-    ["draw"] = { Source = "draw", EventTable = { { s = "arc9_eft_shared/weap_in.wav", t = 0 } }, IKTimeLine = {{ t = 0, lhik = 1 }} },
+    ["draw"] = { Source = "draw", EventTable = { { s = "arc9_eft_shared/weap_in.ogg", t = 0 } }, IKTimeLine = {{ t = 0, lhik = 1 }} },
     ["holster"] = { 
         Source = "holster", 
         EventTable = { 
-            { s = "arc9_eft_shared/weap_out.wav", t = 0 }
+            { s = "arc9_eft_shared/weap_out.ogg", t = 0 }
         },        
         IKTimeLine = {
             { t = 0, lhik = 1 },
@@ -520,8 +520,8 @@ SWEP.Animations = {
 
 
     ["fire"] = { Source = "fire", NoIdle = true, EventTable = { 
-        { s = path .. "ash12_trigger_hammer.wav", t = 0 },
-        { s = path .. "ash12_bolt_handle_bounce.wav", t = 0.02 },
+        { s = path .. "ash12_trigger_hammer.ogg", t = 0 },
+        { s = path .. "ash12_bolt_handle_bounce.ogg", t = 0.02 },
      } },
     ["dryfire"] = { Source = "fire_dry" },
 
@@ -533,12 +533,12 @@ SWEP.Animations = {
         MagSwapTime = 1.5,
         EventTable = {
             { s = randspin, t = 0.17 },   
-            { s = path .. "svd_mag_button.wav", t = 0.83 },
-            { s = path .. "ash12_mag_out.wav", t = 0.9 },
+            { s = path .. "svd_mag_button.ogg", t = 0.83 },
+            { s = path .. "ash12_mag_out.ogg", t = 0.9 },
             { s = pouchin, t = 1.45 },
             { s = pouchout, t = 2 },
             { s = randspin, t = 2.13 },   
-            { s = path .. "ash12_mag_in.wav", t = 2.8 },
+            { s = path .. "ash12_mag_in.ogg", t = 2.8 },
             { s = randspin, t = 3.43 },   
         },        
         IKTimeLine = {
@@ -555,12 +555,12 @@ SWEP.Animations = {
         MagSwapTime = 1.5,
         EventTable = {
             { s = randspin, t = 0.17 },   
-            { s = path .. "svd_mag_button.wav", t = 0.83 },
-            { s = path .. "ash12_mag_out.wav", t = 0.9 },
+            { s = path .. "svd_mag_button.ogg", t = 0.83 },
+            { s = path .. "ash12_mag_out.ogg", t = 0.9 },
             { s = pouchin, t = 1.45 },
             { s = randspin, t = 2.13+0.1 },   
             { s = pouchout, t = 2+0.2 },
-            { s = path .. "ash12_mag_in.wav", t = 2.8+0.2 },
+            { s = path .. "ash12_mag_in.ogg", t = 2.8+0.2 },
             { s = randspin, t = 3.43+0.2 },   
         },        
         IKTimeLine = {
@@ -644,17 +644,17 @@ SWEP.Animations = {
         EventTable = {
             { s = randspin, t = 0.05 },   
             
-            { s = path .. "ash12_bolt_handle_grab.wav", t = 0.3 },
-            { s = path .. "ash12_bolt_out.wav", t = 0.54 },
+            { s = path .. "ash12_bolt_handle_grab.ogg", t = 0.3 },
+            { s = path .. "ash12_bolt_out.ogg", t = 0.54 },
 
             { s = randspin, t = 0.99 },   
 
-            { s = path .. "ammo_singleround_pickup.wav", t = 1.1 },
-            { s = path .. "generic_jam_shell_ remove_heavy2.wav", t = 1.78 },
+            { s = path .. "ammo_singleround_pickup.ogg", t = 1.1 },
+            { s = path .. "generic_jam_shell_ remove_heavy2.ogg", t = 1.78 },
             { s = randspin, t = 2.37 },   
 
-            { s = path .. "ash12_bolt_in.wav", t = 2.81 },
-            { s = path .. "ash12_bolt_handle_bounce.wav", t = 2.87 },
+            { s = path .. "ash12_bolt_in.ogg", t = 2.81 },
+            { s = path .. "ash12_bolt_handle_bounce.ogg", t = 2.87 },
 
             { s = randspin, t = 3.12 },
         },        
@@ -695,11 +695,11 @@ SWEP.Animations = {
         FireASAP = true,
         EventTable = {
             { s = randspin, t = 0.2 },   
-            { s = path .. "svd_mag_button.wav", t = 0.84 },
-            { s = path .. "ash12_mag_out.wav", t = 1 },
+            { s = path .. "svd_mag_button.ogg", t = 0.84 },
+            { s = path .. "ash12_mag_out.ogg", t = 1 },
             { s = randspin, t = 1.49 },   
             { s = randspin, t = 2.93 },   
-            { s = path .. "ash12_mag_in.wav", t = 3.45 },
+            { s = path .. "ash12_mag_in.ogg", t = 3.45 },
             { s = randspin, t = 4.14 },   
         },
         IKTimeLine = {
@@ -716,11 +716,11 @@ SWEP.Animations = {
         FireASAP = true,
         EventTable = {
             { s = randspin, t = 0.2 },   
-            { s = path .. "svd_mag_button.wav", t = 0.84 },
-            { s = path .. "ash12_mag_out.wav", t = 1 },
+            { s = path .. "svd_mag_button.ogg", t = 0.84 },
+            { s = path .. "ash12_mag_out.ogg", t = 1 },
             { s = randspin, t = 1.49 },   
             { s = randspin, t = 2.93 },   
-            { s = path .. "ash12_mag_in.wav", t = 3.45 },
+            { s = path .. "ash12_mag_in.ogg", t = 3.45 },
             { s = randspin, t = 4.14 },   
         },
         IKTimeLine = {
@@ -738,17 +738,17 @@ SWEP.Animations = {
         FireASAP = true,
         EventTable = {
             { s = randspin, t = 0.25 },   
-            { s = path .. "ash12_bolt_handle_grab.wav", t = 0.67 },
-            { s = path .. "ash12_bolt_out_slow.wav", t = 0.97 },
+            { s = path .. "ash12_bolt_handle_grab.ogg", t = 0.67 },
+            { s = path .. "ash12_bolt_out_slow.ogg", t = 0.97 },
             { s = randspin, t = 1.22 },   
-            { s = path .. "ash12_bolt_in_slow.wav", t = 2.13 },
-            { s = path .. "ash12_bolt_handle_bounce.wav", t = 2.3 },
+            { s = path .. "ash12_bolt_in_slow.ogg", t = 2.13 },
+            { s = path .. "ash12_bolt_handle_bounce.ogg", t = 2.3 },
             { s = randspin, t = 2.55 },
         },
     },
 
-    ["toggle"] = { Source = "mod_switch", EventTable = { { s = {"arc9_eft_shared/weapon_light_switcher1.wav", "arc9_eft_shared/weapon_light_switcher2.wav", "arc9_eft_shared/weapon_light_switcher3.wav"}, t = 0 } } },
-    ["switchsights"] = { Source = "mod_switch", EventTable = { { s = {"arc9_eft_shared/weapon_light_switcher1.wav", "arc9_eft_shared/weapon_light_switcher2.wav", "arc9_eft_shared/weapon_light_switcher3.wav"}, t = 0 } } },
+    ["toggle"] = { Source = "mod_switch", EventTable = { { s = {"arc9_eft_shared/weapon_light_switcher1.ogg", "arc9_eft_shared/weapon_light_switcher2.ogg", "arc9_eft_shared/weapon_light_switcher3.ogg"}, t = 0 } } },
+    ["switchsights"] = { Source = "mod_switch", EventTable = { { s = {"arc9_eft_shared/weapon_light_switcher1.ogg", "arc9_eft_shared/weapon_light_switcher2.ogg", "arc9_eft_shared/weapon_light_switcher3.ogg"}, t = 0 } } },
 
 
     ["jam1"] = {
@@ -757,15 +757,15 @@ SWEP.Animations = {
             { s = randspin, t = 0.1 },
             { s = randspin, t = 0.71 },
             { s = randspin, t = 1.2 },
-            { s = path .. "ash12_bolt_handle_grab.wav", t = 1.43 },
-            { s = path .. "ash12_bolt_in_slow.wav", t = 1.76 },
+            { s = path .. "ash12_bolt_handle_grab.ogg", t = 1.43 },
+            { s = path .. "ash12_bolt_in_slow.ogg", t = 1.76 },
             { s = randspin, t = 2 },
             { s = randspin, t = 2.2 },
             { s = randspin, t = 2.48 },
             { s = randspin, t = 2.65 },
-            { s = path .. "generic_jam_shell_ remove_heavy3.wav", t = 2.7 },
-            { s = path .. "ash12_bolt_in.wav", t = 2.75 },
-            { s = path .. "ash12_bolt_handle_bounce.wav", t = 3.12 },
+            { s = path .. "generic_jam_shell_ remove_heavy3.ogg", t = 2.7 },
+            { s = path .. "ash12_bolt_in.ogg", t = 2.75 },
+            { s = path .. "ash12_bolt_handle_bounce.ogg", t = 3.12 },
             { s = randspin, t = 3.21 },
             
         },
@@ -785,18 +785,18 @@ SWEP.Animations = {
             { s = randspin, t = 0.1 },
             { s = randspin, t = 0.71 },
             { s = randspin, t = 1.15 },
-            { s = path .. "ash12_bolt_handle_grab.wav", t = 1.6 },
-            { s = path .. "ash12_bolt_in_slow.wav", t = 1.91 },
-            { s = path .. "ash12_bolt_out.wav", t = 2.31 },
+            { s = path .. "ash12_bolt_handle_grab.ogg", t = 1.6 },
+            { s = path .. "ash12_bolt_in_slow.ogg", t = 1.91 },
+            { s = path .. "ash12_bolt_out.ogg", t = 2.31 },
             { s = randspin, t = 2.61 },
-            { s = path .. "generic_jam_slidelock_hit1.wav", t = 3 },
+            { s = path .. "generic_jam_slidelock_hit1.ogg", t = 3 },
             { s = randspin, t = 3.12 },
-            { s = path .. "generic_jam_slidelock_hit2.wav", t = 3.5 },
-            { s = path .. "generic_jam_shell_ remove_heavy3.wav", t = 3.55 },
+            { s = path .. "generic_jam_slidelock_hit2.ogg", t = 3.5 },
+            { s = path .. "generic_jam_shell_ remove_heavy3.ogg", t = 3.55 },
             { s = randspin, t = 3.59 },
             { s = randspin, t = 4 },
-            { s = path .. "ash12_bolt_in.wav", t = 4.05 },
-            { s = path .. "ash12_bolt_handle_bounce.wav", t = 4.21 },
+            { s = path .. "ash12_bolt_in.ogg", t = 4.05 },
+            { s = path .. "ash12_bolt_handle_bounce.ogg", t = 4.21 },
             { s = randspin, t = 4.46 },
         },
         EjectAt = 3.55,
@@ -815,19 +815,19 @@ SWEP.Animations = {
             { s = randspin, t = 0.1 },
             { s = randspin, t = 0.71 },
             { s = randspin, t = 1.15 },
-            { s = path .. "ash12_bolt_handle_grab.wav", t = 1.46 },
-            { s = path .. "ash12_bolt_in_slow.wav", t = 1.88 },
+            { s = path .. "ash12_bolt_handle_grab.ogg", t = 1.46 },
+            { s = path .. "ash12_bolt_in_slow.ogg", t = 1.88 },
             { s = randspin, t = 1.92 },
-            { s = path .. "ash12_bolt_out_slow.wav", t = 2.3 },
-            { s = path .. "ash12_bolt_handle_bounce.wav", t = 2.81 },
+            { s = path .. "ash12_bolt_out_slow.ogg", t = 2.3 },
+            { s = path .. "ash12_bolt_handle_bounce.ogg", t = 2.81 },
             { s = randspin, t = 2.84 },
-            { s = path .. "ash12_bolt_handle_grab.wav", t = 3.2 },
-            { s = path .. "ash12_bolt_in_slow.wav", t = 3.47 },
+            { s = path .. "ash12_bolt_handle_grab.ogg", t = 3.2 },
+            { s = path .. "ash12_bolt_in_slow.ogg", t = 3.47 },
             { s = randspin, t = 4.06 },
-            { s = path .. "ash12_bolt_out.wav", t = 4.11 },
-            { s = path .. "generic_jam_shell_ remove_heavy3.wav", t = 4.23 },
-            { s = path .. "ash12_bolt_in.wav", t = 4.57 },
-            { s = path .. "ash12_bolt_handle_bounce.wav", t = 4.75 },
+            { s = path .. "ash12_bolt_out.ogg", t = 4.11 },
+            { s = path .. "generic_jam_shell_ remove_heavy3.ogg", t = 4.23 },
+            { s = path .. "ash12_bolt_in.ogg", t = 4.57 },
+            { s = path .. "ash12_bolt_handle_bounce.ogg", t = 4.75 },
             { s = randspin, t = 4.83 },
         },
         EjectAt = 4.23,
@@ -842,15 +842,15 @@ SWEP.Animations = {
             { s = randspin, t = 0.1 },
             { s = randspin, t = 0.71 },
             { s = randspin, t = 1.21 },
-            { s = path .. "ash12_bolt_handle_grab.wav", t = 1.56 },
-            { s = path .. "ash12_bolt_in_slow.wav", t = 1.9 },
+            { s = path .. "ash12_bolt_handle_grab.ogg", t = 1.56 },
+            { s = path .. "ash12_bolt_in_slow.ogg", t = 1.9 },
             { s = randspin, t = 2.05 },
-            { s = path .. "ash12_bolt_out_slow.wav", t = 2.46 },
+            { s = path .. "ash12_bolt_out_slow.ogg", t = 2.46 },
             { s = randspin, t = 2.6 },
-            { s = path .. "ash12_bolt_out.wav", t = 2.83 },
-            { s = path .. "generic_jam_shell_ remove_heavy3.wav", t = 2.97 },
-            { s = path .. "ash12_bolt_in.wav", t = 3.12 },
-            { s = path .. "ash12_bolt_handle_bounce.wav", t = 3.27 },
+            { s = path .. "ash12_bolt_out.ogg", t = 2.83 },
+            { s = path .. "generic_jam_shell_ remove_heavy3.ogg", t = 2.97 },
+            { s = path .. "ash12_bolt_in.ogg", t = 3.12 },
+            { s = path .. "ash12_bolt_handle_bounce.ogg", t = 3.27 },
             { s = randspin, t = 3.45 },
 
         },
@@ -865,7 +865,7 @@ SWEP.Animations = {
         Source = "firemode0",
         EventTable = {
             { s = randspin, t = 0 },
-            { s = path .. "ash12_fire_selector.wav", t = 10/24 },
+            { s = path .. "ash12_fire_selector.ogg", t = 10/24 },
             { s = randspin, t = 20/24 },
         },
         IKTimeLine = {
@@ -879,7 +879,7 @@ SWEP.Animations = {
         Source = "firemode1",
         EventTable = {
             { s = randspin, t = 0 },
-            { s = path .. "ash12_fire_selector.wav", t = 10/24 },
+            { s = path .. "ash12_fire_selector.ogg", t = 10/24 },
             { s = randspin, t = 20/24 },
         },
         IKTimeLine = {
