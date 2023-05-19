@@ -87,7 +87,7 @@ SWEP.DamageLookupTable = {
 --          Spread
 SWEP.SpreadMultMove = 5
 SWEP.SpreadMultSights = 0.5
-SWEP.Spread = 0.015
+SWEP.Spread = 6.88 * ARC9.MOAToAcc
 
 --          Recoil
 
