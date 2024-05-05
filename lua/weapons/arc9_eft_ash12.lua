@@ -1036,6 +1036,16 @@ SWEP.Attachments = {
         Ang = Angle(0, -90, 0),
         Icon_Offset = Vector(0, 0, 0),
     },
+
+    -- shouldve been up there   but to not break presets this here
+    {
+        PrintName = "Top Tactical",
+        Category = {"eft_tactical_top", "eft_tactical_top_big"},
+        Bone = "mod_sight_front",
+        Pos = Vector(0, -2.8, 0),
+        Ang = Angle(0, -90, 0),
+        Icon_Offset = Vector(0, 0, 0),
+    },
 }
 
 SWEP.EFTErgo = 55
