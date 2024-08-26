@@ -643,7 +643,15 @@ local firesadry = {
     { s = path .. "rhino_hammer_release.ogg", t = 0 },
     { s = randspin, t = 0.25 },
     { s = path .. "rsh_12_cock.ogg", t = 0.25+5/24 },
- }
+}
+
+local enterbip = {
+    { s = { "weapons/darsu_eft/bipod/bipod_atlas_unfold_1.ogg", "weapons/darsu_eft/bipod/bipod_atlas_unfold_2.ogg", "weapons/darsu_eft/bipod/bipod_atlas_unfold_3.ogg" }, t = 0.0 },
+    { s = { "weapons/darsu_eft/bipod/bipod_stand_on_1.ogg", "weapons/darsu_eft/bipod/bipod_stand_on_2.ogg", "weapons/darsu_eft/bipod/bipod_stand_on_3.ogg", "weapons/darsu_eft/bipod/bipod_stand_on_4.ogg", "weapons/darsu_eft/bipod/bipod_stand_on_5.ogg" }, t = 0.2 },
+}
+local exitbip = {
+    { s = { "weapons/darsu_eft/bipod/bipod_atlas_fold_1.ogg", "weapons/darsu_eft/bipod/bipod_atlas_fold_2.ogg", "weapons/darsu_eft/bipod/bipod_atlas_fold_3.ogg" }, t = 0.0 },
+}
 
 SWEP.Animations = {
     ["idle"] = { Source = "idle__0" },
@@ -842,6 +850,18 @@ SWEP.Animations = {
     -- ["firemode_2__2"] = { Source = "cocko__2", Reverse = true, EventTable = cock },
     -- ["firemode_2__3"] = { Source = "cocko__3", Reverse = true, EventTable = cock },
     -- ["firemode_2__4"] = { Source = "cocko__4", Reverse = true, EventTable = cock },
+
+    
+    ["enter_bipod__0"] = { Source = "action__0", EventTable = enterbip },
+    ["exit_bipod__0"] = { Source = "action__0", EventTable = exitbip },
+    ["enter_bipod__1"] = { Source = "action__1", EventTable = enterbip },
+    ["exit_bipod__1"] = { Source = "action__1", EventTable = exitbip },
+    ["enter_bipod__2"] = { Source = "action__2", EventTable = enterbip },
+    ["exit_bipod__2"] = { Source = "action__2", EventTable = exitbip },
+    ["enter_bipod__3"] = { Source = "action__3", EventTable = enterbip },
+    ["exit_bipod__3"] = { Source = "action__3", EventTable = exitbip },
+    ["enter_bipod__4"] = { Source = "action__4", EventTable = enterbip },
+    ["exit_bipod__4"] = { Source = "action__4", EventTable = exitbip },
 }
 
 ------------------------- [[[           Attachments            ]]] -------------------------
@@ -927,7 +947,7 @@ SWEP.Attachments = {
     },
     {
         PrintName = "Tactical",
-        Category = {"eft_tactical", "eft_tactical_top", "eft_tactical_top_big", "eft_rsh12_tacticalslot"},
+        Category = {"eft_tactical", "eft_tactical_top", "eft_tactical_top_big", "eft_rsh12_tacticalslot", "eft_bipod"},
         RejectAttachments = { ["eft_tactical_raptar"] = true },
         Bone = "mod_tactical",
         Pos = Vector(0, 0, 0),
