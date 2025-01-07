@@ -27,12 +27,6 @@ SWEP.DefaultBodygroups = "0000000000000"
 
 ------------------------- |||           Offsets            ||| -------------------------
 
-SWEP.HoldType = "revolver"
-SWEP.HoldTypeSprint = "rpg"
-SWEP.HoldTypeHolstered = "rpg"
-SWEP.HoldTypeSights = "revolver"
-SWEP.HoldTypeCustomize = "physgun"
-
 SWEP.WorldModelOffset = {
     Pos = Vector(-15.5, 5.5, -3.2),
     Ang = Angle(-7, 0, 180),
@@ -54,6 +48,22 @@ SWEP.CustomizePos = Vector(24, 22, 3)
 SWEP.CustomizeSnapshotFOV = 95
 SWEP.CustomizeRotateAnchor = Vector(24, -4.28-0.1, -5.23)
 
+SWEP.NonTPIKAnimReload = ACT_HL2MP_GESTURE_RELOAD_REVOLVER
+
+if GetConVar("arc9_eft_nontpik_mode"):GetBool() then -- pistols
+    SWEP.HoldType = "revolver"
+    SWEP.HoldTypeSprint = "normal"
+    SWEP.HoldTypeHolstered = "normal"
+    SWEP.HoldTypeSights = "revolver"
+    SWEP.HoldTypeCustomize = "passive"
+end
+
+-- this thing WILL one hand sprint always
+SWEP.OneHandedSprint = true
+SWEP.SprintAng = Angle(3, 33, -7)
+SWEP.SprintPos = Vector(3, -7.1, -9)
+SWEP.HoldTypeSprint = "normal"
+
 ------------------------- |||           Stats            ||| -------------------------
 
 SWEP.Spread = 6.88 * ARC9.MOAToAcc
@@ -62,52 +72,52 @@ SWEP.EFTErgo = 40
 SWEP.BarrelLength = 18
 SWEP.Ammo = "357"
 SWEP.Firemodes = {
-    { Mode = 1, PrintName = "Double action", PoseParam = 1  },
-    { Mode = 1, PrintName = "Single action", PoseParam = 2, EFTSingleAction = true, ManualAction = true, RPM = 300, TriggerDelay = false, TriggerStartFireAnim = false, Spread = 0.005, RecoilKickMult = 0.75 },
+    { Mode = 1, PrintName = "Double action", PoseParam = 1, Spread = 0.005  },
+    { Mode = 1, PrintName = "Single action", PoseParam = 2, EFTSingleAction = true, ManualAction = true, RPM = 300, TriggerDelay = false, TriggerStartFireAnim = false, RecoilKickMult = 0.75 },
 }
 
 SWEP.Slot = 1
 
 ------------------------- |||           Recoil            ||| -------------------------
 
-SWEP.Recoil = 3 -- general multiplier of main recoil
+SWEP.Recoil = 1.5 -- general multiplier of main recoil
 
-SWEP.RecoilUp   = 5   -- up recoil
-SWEP.RecoilSide = 1.1 -- sideways recoil
-SWEP.RecoilRandomUp   = 0.0 -- random up/down
-SWEP.RecoilRandomSide = 1   -- random left/right
+SWEP.RecoilUp   = 6   -- up recoil
+SWEP.RecoilSide = 1.5 -- sideways recoil
+SWEP.RecoilRandomUp   = 0.2 -- random up/down
+SWEP.RecoilRandomSide = 0.2   -- random left/right
 
-SWEP.RecoilAutoControl = 4.0 -- autocompenstaion, could be cool if set to high but it also affects main recoil
+SWEP.RecoilAutoControl = 1.7 -- autocompenstaion, could be cool if set to high but it also affects main recoil
 
 -- visual recoil   aka visrec
-SWEP.VisualRecoil = 1 -- general multiplier for it
+SWEP.VisualRecoil = 2 -- general multiplier for it
 
-SWEP.EFT_VisualRecoilUp_BURST_SEMI   = 3   -- up/down tilt when semi/bursts
-SWEP.VisualRecoilUp                   = 3   --   when fullautoing
+SWEP.EFT_VisualRecoilUp_BURST_SEMI   = 10   -- up/down tilt when semi/bursts
+SWEP.VisualRecoilUp                   = 10   --   when fullautoing
 SWEP.EFT_VisualRecoilSide_BURST_SEMI = 0.001 -- left/right tilt when semi/burst
-SWEP.VisualRecoilSide                 = 0.1   --   when fullautoing
+SWEP.VisualRecoilSide                 = 0.005   --   when fullautoing
 SWEP.VisualRecoilRoll = 4 -- roll tilt, a visual thing
 
-SWEP.VisualRecoilPunch = 5 -- How far back visrec moves the gun
-SWEP.VisualRecoilPunchSights = 45 -- same but in sights only
+SWEP.VisualRecoilPunch = 0.75 -- How far back visrec moves the gun
+SWEP.VisualRecoilPunchSights = 5 -- same but in sights only
 
-SWEP.VisualRecoilDampingConst = 200  -- spring settings, this is speed of visrec
-SWEP.VisualRecoilSpringPunchDamping = 8 -- the less this is the more wobbly gun moves
-SWEP.VisualRecoilSpringMagnitude = 0.5 -- some third element of spring, high values make gun shake asf on low fps
+SWEP.VisualRecoilDampingConst = 45  -- spring settings, this is speed of visrec
+SWEP.VisualRecoilSpringPunchDamping = 4 -- the less this is the more wobbly gun moves
+SWEP.VisualRecoilSpringMagnitude = 1.25 -- some third element of spring, high values make gun shake asf on low fps
 
-SWEP.VisualRecoilPositionBumpUpHipFire = 0 -- gun will go down each shot by this value
-SWEP.VisualRecoilPositionBumpUp = 0.1 -- same but in sights
+SWEP.VisualRecoilPositionBumpUpHipFire = -0.01 -- gun will go down each shot by this value
+SWEP.VisualRecoilPositionBumpUp = 0.01 -- same but in sights
 SWEP.VisualRecoilPositionBumpUpRTScope = 0.05 -- same but in rt scopes, you probably should keep it same as sight value, i guess it doesn't matter anymore after recoil update
 
--- SWEP.VisualRecoilCenter = Vector(2, 12, 2) -- ugh, i dont now what to set it too, but probably it should be diffferent on each gun
 SWEP.EFT_ShotsToSwitchToFullAutoBehaviur = 2 -- how many shots for switch to fullauto stats from semi/burst, + 2 shots afterwards are lerping. you probably should not touch this but ok
 
-SWEP.RecoilKick = 1.5 -- camera roll each shot + makes camera go more up when fullautoing
+SWEP.RecoilKick = 3.1 -- camera roll each shot + makes camera go more up when fullautoing
 
-SWEP.VisualRecoilCenter = Vector(4.28, 19, -2)
-SWEP.SubtleVisualRecoil = 0.75
-SWEP.SubtleVisualRecoilDirection = 3
-SWEP.SubtleVisualRecoilSpeed = 1.25
+SWEP.VisualRecoilCenter = Vector(4.28, 15, -4.2)
+SWEP.SubtleVisualRecoil = 1.7
+SWEP.SubtleVisualRecoilHipFire = 1.35
+SWEP.SubtleVisualRecoilDirection = 8
+SWEP.SubtleVisualRecoilSpeed = 0.25
 
 ------------------------- |||           Damage            ||| -------------------------
 -- default ps12
@@ -561,11 +571,11 @@ SWEP.Animations = {
     ["fire_dry__3"] = { Source = "fire_dry__3", EventTable = firesadry },
     ["fire_dry__4"] = { Source = "fire_dry__4", EventTable = firesadry },
 
-    ["cycle__0"] = { Source = "cock__0", EventTable = cock },
-    ["cycle__1"] = { Source = "cock__1", EventTable = cock },
-    ["cycle__2"] = { Source = "cock__2", EventTable = cock },
-    ["cycle__3"] = { Source = "cock__3", EventTable = cock },
-    ["cycle__4"] = { Source = "cock__4", EventTable = cock },
+    ["cycle__0"] = { Source = "cock__0", EventTable = cock, Mult = 0.8 },
+    ["cycle__1"] = { Source = "cock__1", EventTable = cock, Mult = 0.8 },
+    ["cycle__2"] = { Source = "cock__2", EventTable = cock, Mult = 0.8 },
+    ["cycle__3"] = { Source = "cock__3", EventTable = cock, Mult = 0.8 },
+    ["cycle__4"] = { Source = "cock__4", EventTable = cock, Mult = 0.8 },
 
     ["sg_reload_start1__0"] = { Source = "sg_reload_start1__0", EventTable = sg_start1 },
     ["sg_reload_start1__1"] = { Source = "sg_reload_start1__1", EventTable = sg_start1 },
