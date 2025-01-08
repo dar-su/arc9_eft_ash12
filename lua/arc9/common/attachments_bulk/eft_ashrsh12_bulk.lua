@@ -311,6 +311,7 @@ ATT.ChamberSize = 1
 ATT.DropMagazineAmount = 1
 ATT.DropMagazineModel = "models/weapons/arc9/darsu_eft/mods/ash12mag10.mdl"
 
+ATT.ActivateElements = {"ashmag10"}
 
 ARC9.LoadAttachment(ATT, "eft_ash12_mag_10")
 
@@ -342,6 +343,7 @@ ATT.ChamberSize = 1
 ATT.DropMagazineAmount = 1
 ATT.DropMagazineModel = "models/weapons/arc9/darsu_eft/mods/ash12mag20.mdl"
 
+ATT.ActivateElements = {"ashmag20"}
 
 ARC9.LoadAttachment(ATT, "eft_ash12_mag_20")
 

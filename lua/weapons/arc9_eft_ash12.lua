@@ -212,7 +212,7 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
 
     local ending = ""
 
-    local nomag = !(elements["eft_ash12_mag_10"] or elements["eft_ash12_mag_20"])
+    local nomag = !(elements["ashmag10"] or elements["ashmag20"])
     -- print(nomag)
     -- local nomag = false 
     local empty = swep:Clip1() == 0
@@ -242,9 +242,9 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
             net.WriteUInt(swep:GetCapacity(), 9)
             net.Send(swep:GetOwner())
 
-            if elements["eft_ash12_mag_10"] then
+            if elements["ashmag10"] then
                 return anim .. "2_0"
-            elseif elements["eft_ash12_mag_20"] then
+            elseif elements["ashmag20"] then
                 return anim .. "2_1"
             end
         end
@@ -257,9 +257,9 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
     if anim == "reload" or anim == "reload_empty" then -- reload
         if empty then ending = ending .. "_empty" end
 
-        if elements["eft_ash12_mag_10"] then
+        if elements["ashmag10"] then
             return anim .. (empty and "_empty" or "") .. "_0"
-        elseif elements["eft_ash12_mag_20"] then
+        elseif elements["ashmag20"] then
             return anim .. (empty and "_empty" or "") .. "_1"
         end
 
