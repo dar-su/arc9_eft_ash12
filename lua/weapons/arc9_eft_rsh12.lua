@@ -77,6 +77,7 @@ SWEP.Firemodes = {
 }
 
 SWEP.Slot = 1
+SWEP.ReloadInSights = false
 
 ------------------------- |||           Recoil            ||| -------------------------
 
@@ -240,6 +241,8 @@ local function spindelay(swep) -- setting nwint not in start of anim but while o
     end)
 end
 
+local infammo = GetConVar("arc9_infinite_ammo")
+
 SWEP.Hook_TranslateAnimation = function(swep, anim)
     local elements = swep:GetElements()
 
@@ -259,7 +262,7 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
             if ARC9EFTBASE and SERVER then
                 net.Start("arc9eftmagcheck")
                 net.WriteBool(true) -- accurate or not based on mag type
-                net.WriteUInt(math.min(clip , swep:GetMaxClip1()), 9)
+                net.WriteUInt(math.min(clip , swep:GetMaxClip1()) + 1, 9)
                 net.WriteUInt(swep:GetCapacity(), 9)
                 net.Send(swep:GetOwner())
 
@@ -268,10 +271,7 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
         else
             return "look__" .. cylrot
         end
-    end
-    
-    
-    if anim == "idle" then   
+    elseif anim == "idle" then   
         if swep.nocylrot then swep.nocylrot = nil end
         if swep.fistful then swep.fistful = nil end
     elseif anim == "ready" or anim == "draw" then   
@@ -314,7 +314,7 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
     elseif anim == "reload_insert" then
         if swep.afterreloadstart then
             swep.roundcount = clip
-            local reserve = math.Clamp(swep:GetOwner():GetAmmoCount(swep.Ammo), 0, 5)
+            local reserve = infammo:GetBool() and 5 or math.Clamp(swep:GetOwner():GetAmmoCount(swep.Ammo), 0, 5)
             if reserve == 0 then reserve = 5 end
             if swep.fistful then 
                 swep.roundcount = reserve -- real ammo count in hand
@@ -338,8 +338,17 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
         anim = swep.fistful and "fistful_end_r" .. clip or "sg_reload_end"
         swep:SetNWInt("EFTRevolverCylRot", 0)
         swep.nocylrot = true
+        local temproundcount = swep.roundcount
         swep.roundcount = clip
         swep:SetNWInt("EFTRevolverRoundCount", clip)
+        
+        if swep.fistful then 
+            swep:SetNWInt("EFTRevolverRoundCount", temproundcount)
+
+            timer.Simple(0.3, function() -- wah wah
+                if IsValid(swep) then swep:SetNWInt("EFTRevolverRoundCount", clip) end
+            end)
+        end
     end
     
     if !swep.nocylrot then
@@ -736,7 +745,7 @@ SWEP.Animations = {
 
 ------------------------- |||           Attachments            ||| -------------------------
 
-SWEP.EFTRequiredAtts = { "HasMag", "HasAmmoooooooo" }
+SWEP.EFTRequiredAtts = { "HasMag", "HasGrip", "HasAmmoooooooo" }
 
 SWEP.AttachmentElements = {
     ["eft_rsh12_pgrip_std"] = { Bodygroups = { {2, 1} } },
