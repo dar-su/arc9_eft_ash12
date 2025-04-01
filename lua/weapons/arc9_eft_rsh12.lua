@@ -30,8 +30,8 @@ SWEP.DefaultBodygroups = "0000000000000"
 SWEP.WorldModelOffset = {
     Pos = Vector(-15.5, 5.5, -3.2),
     Ang = Angle(-7, 0, 180),
-    -- TPIKPos = Vector(-5, 5, -4), -- rpg
-    TPIKPos = Vector(-18, 3, -4), -- rewolv
+    TPIKPos = Vector(-5, 5, -4), -- rpg
+    -- TPIKPos = Vector(-18, 3, -4), -- rewolv
     TPIKAng = Angle(-5, 0, 180),
     Scale = 1
 }
