@@ -878,4 +878,29 @@ SWEP.Attachments = {
         Ang = Angle(0, -90, 0),
         Icon_Offset = Vector(0, 0, 0),
     },
+
+    {
+        PrintName = "Camouflage 1",
+        Category = {"universal_camo"},
+        Bone = "mod_sight_rear",
+        Pos = Vector(0, -7, 1),
+        CosmeticOnly = true,
+        IsAdvancedCamo1 = true,
+    },
+    {
+        PrintName = "Camouflage 2",
+        Category = {"universal_camo"},
+        Bone = "mod_sight_rear",
+        Pos = Vector(0, -8.5, 1),
+        CosmeticOnly = true,
+        IsAdvancedCamo2 = true,
+    },
+    {
+        PrintName = "Camouflage 3",
+        Category = {"universal_camo"},
+        Bone = "mod_sight_rear",
+        Pos = Vector(0, -10, 1),
+        CosmeticOnly = true,
+        IsAdvancedCamo3 = true,
+    },
 }

@@ -282,6 +282,7 @@ ATT.Attachments = {
     },
 }
 
+ATT.AdvancedCamoSupport = true
 
 ARC9.LoadAttachment(ATT, "eft_ash12_hg_std")
 
@@ -313,6 +314,7 @@ ATT.DropMagazineModel = "models/weapons/arc9/darsu_eft/mods/ash12mag10.mdl"
 
 ATT.ActivateElements = {"ashmag10"}
 
+ATT.AdvancedCamoSupport = true
 ARC9.LoadAttachment(ATT, "eft_ash12_mag_10")
 
 
@@ -345,6 +347,7 @@ ATT.DropMagazineModel = "models/weapons/arc9/darsu_eft/mods/ash12mag20.mdl"
 
 ATT.ActivateElements = {"ashmag20"}
 
+ATT.AdvancedCamoSupport = true
 ARC9.LoadAttachment(ATT, "eft_ash12_mag_20")
 
 
@@ -381,6 +384,7 @@ ATT.MenuCategory = "ARC9 - EFT Attachments"
 ATT.Category = {"eft_ash12_muzzle"}
 
 
+ATT.AdvancedCamoSupport = true
 
 ARC9.LoadAttachment(ATT, "eft_ash12_muzzle_silencer")
 
