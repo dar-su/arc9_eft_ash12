@@ -44,9 +44,10 @@ SWEP.IronSights = {
 }
 
 SWEP.ActivePos = Vector(-0.7, -3.1, -.35)
-SWEP.CustomizePos = Vector(24, 22, 3)
-SWEP.CustomizeSnapshotFOV = 95
+SWEP.CustomizePos = Vector(24, 35, 3)
+SWEP.CustomizeSnapshotFOV = 60
 SWEP.CustomizeRotateAnchor = Vector(24, -4.28-0.1, -5.23)
+SWEP.CustomizeSnapshotPos = Vector(0, 10, 0)
 
 SWEP.NonTPIKAnimReload = ACT_HL2MP_GESTURE_RELOAD_REVOLVER
 
@@ -73,8 +74,8 @@ SWEP.EFTErgo = 40
 SWEP.BarrelLength = 18
 SWEP.Ammo = "357"
 SWEP.Firemodes = {
-    { Mode = 1, PrintName = "Double action", PoseParam = 1, Spread = 0.005  },
-    { Mode = 1, PrintName = "Single action", PoseParam = 2, EFTSingleAction = true, ManualAction = true, RPM = 300, TriggerDelay = false, TriggerStartFireAnim = false, RecoilKickMult = 0.75 },
+    { Mode = 1, PrintName = "DOUBLE A.", PoseParam = 1, Spread = 0.005  },
+    { Mode = 1, PrintName = "SINGLE A.", PoseParam = 2, EFTSingleAction = true, ManualAction = true, RPM = 300, TriggerDelay = false, TriggerStartFireAnim = false, RecoilKickMult = 0.75 },
 }
 
 SWEP.Slot = 1
@@ -783,10 +784,10 @@ SWEP.Attachments = {
     {
         PrintName = "Ammunition",
         Category = "eft_ammo_12755",
-        Bone = "weapon",
+        Bone = "mod_magazine",
         Integral = true,
         Installed = "eft_ammo_12755_ps12",
-        Pos = Vector(0, 22, -2),
+        Pos = Vector(0, -0.75, 0),
         Ang = Angle(0, 0, 0),
     },
     {

@@ -43,9 +43,14 @@ SWEP.IronSights = {
 }
 
 SWEP.ActivePos = Vector(-0.7, -3.1, -.35)
-SWEP.CustomizePos = Vector(14.5, 30, 4)
-SWEP.CustomizeSnapshotFOV = 95
-SWEP.CustomizeRotateAnchor = Vector(14.5, -4.28-0.1, -5.23)
+SWEP.CustomizePos = Vector(13.5, 40, 4)
+SWEP.CustomizeSnapshotFOV = 60
+SWEP.CustomizeRotateAnchor = Vector(13.5, -4.28-0.1, -5.23)
+SWEP.CustomizeSnapshotPos = Vector(0, 30, 0)
+
+SWEP.PeekMaxFOV = 60
+SWEP.PeekPosReloading = Vector(3, 2, -1)
+SWEP.PeekAngReloading = Angle(0, 0, -5)
 
 ------------------------- |||           Stats            ||| -------------------------
 
@@ -263,7 +268,7 @@ SWEP.Hook_TranslateAnimation = function(swep, anim)
             return anim .. (empty and "_empty" or "") .. "_1"
         end
 
-        return "reload_single"
+        -- return "reload_single"
     end
     
     if anim == "fix" then
@@ -379,117 +384,41 @@ SWEP.Animations = {
     ["dryfire"] = { Source = "fire_dry" },
 
 
-    ["reload_0"] = {
-        Source = "reload0",
-        MinProgress = 0.95,
+    ["reload"] = {
+        Source = "reload_single",
+        RefillProgress = 0.875,
+        PeekProgress = 0.95,
+        MinProgress = 0.975,
         FireASAP = true,
         MagSwapTime = 1.5,
         EventTable = {
-            { s = randspin, t = 0.17 },   
-            { s = path .. "svd_mag_button.ogg", t = 0.83 },
-            { s = path .. "ash12_mag_out.ogg", t = 0.9 },
-            { s = pouchin, t = 1.45 },
-            { s = pouchout, t = 2 },
-            { s = randspin, t = 2.13 },   
-            { s = path .. "ash12_mag_in.ogg", t = 2.8 },
-            { s = randspin, t = 3.43 },   
+            { s = randspin, t = 0.05 },   
+            
+            { s = path .. "ash12_bolt_handle_grab.ogg", t = 0.3 },
+            { s = path .. "ash12_bolt_out.ogg", t = 0.54 },
+
+            { s = randspin, t = 0.99 },   
+
+            { s = path .. "ammo_singleround_pickup.ogg", t = 1.1 },
+            { s = path .. "generic_jam_shell_ remove_heavy2.ogg", t = 1.78 },
+            { s = randspin, t = 2.37 },   
+
+            { s = path .. "ash12_bolt_in.ogg", t = 2.81 },
+            { s = path .. "ash12_bolt_handle_bounce.ogg", t = 2.87 },
+
+            { s = randspin, t = 3.12 },
         },        
         IKTimeLine = {
             { t = 0, lhik = 1 },
-            { t = 0.1, lhik = 0 },
-            { t = 0.85, lhik = 0 },
+            { t = 0.24, lhik = 1 },
+            { t = 0.35, lhik = 0 },
+            { t = 0.7, lhik = 0 },
+            { t = 0.85, lhik = 1 },
             { t = 1, lhik = 1 },
         },
     },    
-    ["reload_1"] = {
-        Source = "reload1",
-        MinProgress = 0.95,
-        FireASAP = true,
-        MagSwapTime = 1.5,
-        EventTable = {
-            { s = randspin, t = 0.17 },   
-            { s = path .. "svd_mag_button.ogg", t = 0.83 },
-            { s = path .. "ash12_mag_out.ogg", t = 0.9 },
-            { s = pouchin, t = 1.45 },
-            { s = randspin, t = 2.13+0.1 },   
-            { s = pouchout, t = 2+0.2 },
-            { s = path .. "ash12_mag_in.ogg", t = 2.8+0.2 },
-            { s = randspin, t = 3.43+0.2 },   
-        },        
-        IKTimeLine = {
-            { t = 0, lhik = 1 },
-            { t = 0.1, lhik = 0 },
-            { t = 0.83, lhik = 0 },
-            { t = 1, lhik = 1 },
-        },
-    },
 
-    -- ["reload_empty_0"] = {
-    --     Source = "reload_empty0_2",
-    --     MinProgress = 0.95,
-    --     FireASAP = true,
-    --     MagSwapTime = 1.5,
-    --     EventTable = emptyreload0
-    -- },
-
-    ["reload_empty_0"] = {
-        Source = {"reload_empty0_0", "reload_empty0_1"},
-        MinProgress = 0.95,
-        FireASAP = true,
-        MagSwapTime = 1.5,
-        EventTable = emptyreload0,
-        IKTimeLine = {
-            { t = 0, lhik = 1 },
-            { t = 0.1, lhik = 0 },
-            { t = 0.55, lhik = 0 },
-            { t = 0.7, lhik = 1 },
-            { t = 1, lhik = 1 },
-        },
-    },
-    ["1_reload_empty_0"] = { -- seperate cuz differeitn lhik
-        Source = "reload_empty0_2",
-        MinProgress = 0.95,
-        FireASAP = true,
-        MagSwapTime = 1.5,
-        EventTable = emptyreload0,
-        IKTimeLine = {
-            { t = 0, lhik = 1 },
-            { t = 0.1, lhik = 0 },
-            { t = 0.85, lhik = 0 },
-            { t = 1, lhik = 1 },
-        },
-    },
-
-    ["reload_empty_1"] = {
-        Source = {"reload_empty1_0", "reload_empty1_1"},
-        MinProgress = 0.95,
-        FireASAP = true,
-        MagSwapTime = 1.5,
-        EventTable = emptyreload1,        
-        IKTimeLine = {
-            { t = 0, lhik = 1 },
-            { t = 0.1, lhik = 0 },
-            { t = 0.55, lhik = 0 },
-            { t = 0.75, lhik = 1 },
-            { t = 1, lhik = 1 },
-        },
-    },
-    ["2_reload_empty_1"] = { -- seperate cuz differeitn lhik
-        Source = "reload_empty1_2",
-        MinProgress = 0.95,
-        FireASAP = true,
-        MagSwapTime = 1.5,
-        EventTable = emptyreload1,
-        IKTimeLine = {
-            { t = 0, lhik = 1 },
-            { t = 0.1, lhik = 0 },
-            { t = 0.85, lhik = 0 },
-            { t = 1, lhik = 1 },
-        },
-    },
-
-
-    ["reload_single"] = {
+    ["reload_empty"] = {
         Source = "reload_single",
         MinProgress = 0.95,
         FireASAP = true,
@@ -520,7 +449,129 @@ SWEP.Animations = {
             { t = 1, lhik = 1 },
         },
     },    
-    
+
+    ["reload_0"] = {
+        Source = "reload0",
+        RefillProgress = 0.85,
+        PeekProgress = 0.95,
+        MinProgress = 0.975,
+        FireASAP = true,
+        MagSwapTime = 1.5,
+        EventTable = {
+            { s = randspin, t = 0.17 },   
+            { s = path .. "svd_mag_button.ogg", t = 0.83 },
+            { s = path .. "ash12_mag_out.ogg", t = 0.9 },
+            { s = pouchin, t = 1.45 },
+            { s = pouchout, t = 2 },
+            { s = randspin, t = 2.13 },   
+            { s = path .. "ash12_mag_in.ogg", t = 2.8 },
+            { s = randspin, t = 3.43 },   
+        },        
+        IKTimeLine = {
+            { t = 0, lhik = 1 },
+            { t = 0.1, lhik = 0 },
+            { t = 0.85, lhik = 0 },
+            { t = 1, lhik = 1 },
+        },
+    },    
+    ["reload_1"] = {
+        Source = "reload1",
+        RefillProgress = 0.85,
+        PeekProgress = 0.95,
+        MinProgress = 0.975,
+        FireASAP = true,
+        MagSwapTime = 1.5,
+        EventTable = {
+            { s = randspin, t = 0.17 },   
+            { s = path .. "svd_mag_button.ogg", t = 0.83 },
+            { s = path .. "ash12_mag_out.ogg", t = 0.9 },
+            { s = pouchin, t = 1.45 },
+            { s = randspin, t = 2.13+0.1 },   
+            { s = pouchout, t = 2+0.2 },
+            { s = path .. "ash12_mag_in.ogg", t = 2.8+0.2 },
+            { s = randspin, t = 3.43+0.2 },   
+        },        
+        IKTimeLine = {
+            { t = 0, lhik = 1 },
+            { t = 0.1, lhik = 0 },
+            { t = 0.83, lhik = 0 },
+            { t = 1, lhik = 1 },
+        },
+    },
+
+    -- ["reload_empty_0"] = {
+    --     Source = "reload_empty0_2",
+    --     MinProgress = 0.95,
+    --     FireASAP = true,
+    --     MagSwapTime = 1.5,
+    --     EventTable = emptyreload0
+    -- },
+
+    ["reload_empty_0"] = {
+        Source = {"reload_empty0_0", "reload_empty0_1"},
+        RefillProgress = 0.9,
+        PeekProgress = 0.95,
+        MinProgress = 0.975,
+        FireASAP = true,
+        MagSwapTime = 1.5,
+        EventTable = emptyreload0,
+        IKTimeLine = {
+            { t = 0, lhik = 1 },
+            { t = 0.1, lhik = 0 },
+            { t = 0.55, lhik = 0 },
+            { t = 0.7, lhik = 1 },
+            { t = 1, lhik = 1 },
+        },
+    },
+    ["1_reload_empty_0"] = { -- seperate cuz differeitn lhik
+        Source = "reload_empty0_2",
+        RefillProgress = 0.9,
+        PeekProgress = 0.95,
+        MinProgress = 0.975,
+        FireASAP = true,
+        MagSwapTime = 1.5,
+        EventTable = emptyreload0,
+        IKTimeLine = {
+            { t = 0, lhik = 1 },
+            { t = 0.1, lhik = 0 },
+            { t = 0.85, lhik = 0 },
+            { t = 1, lhik = 1 },
+        },
+    },
+
+    ["reload_empty_1"] = {
+        Source = {"reload_empty1_0", "reload_empty1_1"},
+        RefillProgress = 0.9,
+        PeekProgress = 0.95,
+        MinProgress = 0.975,
+        FireASAP = true,
+        MagSwapTime = 1.5,
+        EventTable = emptyreload1,        
+        IKTimeLine = {
+            { t = 0, lhik = 1 },
+            { t = 0.1, lhik = 0 },
+            { t = 0.55, lhik = 0 },
+            { t = 0.75, lhik = 1 },
+            { t = 1, lhik = 1 },
+        },
+    },
+    ["2_reload_empty_1"] = { -- seperate cuz differeitn lhik
+        RefillProgress = 0.9,
+        PeekProgress = 0.95,
+        MinProgress = 0.975,
+        MinProgress = 0.95,
+        FireASAP = true,
+        MagSwapTime = 1.5,
+        EventTable = emptyreload1,
+        IKTimeLine = {
+            { t = 0, lhik = 1 },
+            { t = 0.1, lhik = 0 },
+            { t = 0.85, lhik = 0 },
+            { t = 1, lhik = 1 },
+        },
+    },
+
+
 
 
     ["inspect1"] = {
@@ -814,10 +865,10 @@ SWEP.Attachments = {
     {
         PrintName = "Ammunition",
         Category = "eft_ammo_12755",
-        Bone = "weapon",
+        Bone = "mod_magazine",
         Integral = true,
         Installed = "eft_ammo_12755_ps12",
-        Pos = Vector(0, 4, -4),
+        Pos = Vector(0, -2, 0),
         Ang = Angle(0, 0, 0),
     },
     {
@@ -827,7 +878,7 @@ SWEP.Attachments = {
         Installed = "eft_ash12_mag_10",
         Pos = Vector(0, 0, 0),
         Ang = Angle(0, -90, 0),
-        Icon_Offset = Vector(0, 0, 0),
+        Icon_Offset = Vector(-1, 0, 0),
     },
     {
         PrintName = "Foregrip",
@@ -865,7 +916,7 @@ SWEP.Attachments = {
         Category = {"eft_custom_slot", "eft_custom_slot_ash12"},
         RejectAttachments = {["eft_extras_camos"] = true}, -- we have real camo support
         Bone = "mod_sight_rear",
-        Pos = Vector(0, -7, 0),
+        Pos = Vector(0, -7, -1.25),
         Ang = Angle(0, -90, 0),
         Icon_Offset = Vector(0, 0, 0),
     },
@@ -905,3 +956,54 @@ SWEP.Attachments = {
         IsAdvancedCamo3 = true,
     },
 }
+
+
+------------------------- |||           CustomizePos            ||| -------------------------
+
+SWEP.CustomizePosHook = function(wep, vec)
+-- Suppressors	
+	if wep:HasElement("eft_ash12_muzzle_silencer") then vec = vec + Vector(1.5, 3, 0) end
+	
+-- Magazines
+	if wep:HasElement("eft_ash12_mag_20") or wep:HasElement("eft_ash12_mag_20_stick") then vec = vec + Vector(0, 4, 1.75) end
+
+	return vec
+end
+
+SWEP.CustomizeRotateAnchorHook = function(wep, vec)
+-- Barrels
+	if wep:HasElement("eft_barrel_ar15_260mm") or wep:HasElement("eft_barrel_hk416_11i") or wep:HasElement("eft_barrel_hk416_106i") then vec = vec + Vector(-2.5, 0, 0)
+	elseif wep:HasElement("eft_barrel_ar15_406mm") or wep:HasElement("eft_barrel_hk416_165i") then vec = vec + Vector(1.25, 0, 0)
+	elseif wep:HasElement("eft_barrel_ar15_hanson_16") then vec = vec + Vector(2, 0, 0)
+	elseif wep:HasElement("eft_barrel_ar15_18i") then vec = vec + Vector(2.5, 0, 0)
+	elseif wep:HasElement("eft_barrel_ar15_20i") or wep:HasElement("eft_barrel_hk416_20i") then vec = vec + Vector(3.25, 0, 0)
+	end
+	
+-- Stocks
+	if wep:HasElement("eft_ar_stock_prsgen3") or wep:HasElement("eft_ar_stock_prsgen3g") then vec = vec + Vector(-1.75, 0, 0) end
+	if wep:HasElement("eft_ar_stock_prsgen2f") or wep:HasElement("eft_ar_stock_adar") then vec = vec + Vector(-1.25, 0, 0) end
+
+-- Suppressors	
+	if wep:HasElement("eft_silencer_dthybrid") 
+		or wep:HasElement("eft_silencer_r43_556") 
+		or wep:HasElement("eft_silencer_ultra5") 
+		or wep:HasElement("eft_silencer_ar15_m4sdk") 
+		or wep:HasElement("eft_silencer_ar15_sakerasr")
+		or wep:HasElement("eft_silencer_ar15_socommini") 
+		or wep:HasElement("eft_silencer_ar15_socommonster") 
+		or wep:HasElement("eft_silencer_ar15_socomrc2") 
+		or wep:HasElement("eft_silencer_ar15_kacqdssnt4") 
+		or wep:HasElement("eft_silencer_ar15_kacqdssnt4_f") 
+		then vec = vec + Vector(2, 0, 0)
+
+		elseif wep:HasElement("eft_silencer_sdn6") then vec = vec + Vector(4, 0, 0)
+		elseif wep:HasElement("eft_silencer_thorpsr") then vec = vec + Vector(4, 0, 0)
+		elseif wep:HasElement("eft_silencer_waveqd") or wep:HasElement("eft_silencer_gemtechone") then vec = vec + Vector(3, 0, 0)
+	end
+	
+
+-- Magazines
+	if wep:HasElement("eft_mag_ar15_surefire_100") then vec = vec + Vector(0, 0, 3) end
+
+	return vec
+end
