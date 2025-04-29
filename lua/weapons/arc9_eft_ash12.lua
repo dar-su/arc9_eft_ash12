@@ -401,11 +401,11 @@ SWEP.Animations = {
     },
 
 
-    ["fire"] = { Source = "fire", NoIdle = true, EventTable = { 
+    ["fire"] = { Source = "fire", NoIdle = true, IKTimeLine = {{ t = 0, lhik = 1 }} , EventTable = { 
         { s = path .. "ash12_trigger_hammer.ogg", t = 0 },
         { s = path .. "ash12_bolt_handle_bounce.ogg", t = 0.02 },
      } },
-    ["dryfire"] = { Source = "fire_dry" },
+    ["dryfire"] = { Source = "fire_dry", IKTimeLine = {{ t = 0, lhik = 1 }} },
 
 
     ["reload"] = {
