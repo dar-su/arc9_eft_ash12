@@ -460,40 +460,6 @@ ATT.Category = {"eft_as12_rs"}
 
 ARC9.LoadAttachment(ATT, "eft_ash12_rs_std")
 
-
-///////////////////////////////////////      eft_rsh12_fastreload
-
-
-ATT = {}
-
-ATT.PrintName = "Dump cylinder on every reload"
-ATT.CompactName = "Fast reload"
-ATT.Icon = Material("entities/eft_ash12_attachments/fastreload.png", "mips smooth")
-ATT.Description = [[Attachment instead of double pressing R in EFT.
-Drops all ammo on ground on any reload for faster reload.]]
-
-ATT.EFTForceFastReload = true
-
-ATT.AttNotForNPCs = true 
-
-ATT.SortOrder = 0
-ATT.MenuCategory = "ARC9 - EFT Attachments"
-
-ATT.Category = {"eft_custom_slot_rsh12"}
-ATT.Attachments = {
-    {
-        PrintName = "Custom slot",
-        Pos = Vector(0, 0, 1),
-        Ang = Angle(0, 0, 0),
-        Category = {"eft_custom_slot"},
-    },
-}
-
-
-
-ARC9.LoadAttachment(ATT, "eft_rsh12_fastreload")
-
-
 ///////////////////////////////////////      eft_rsh12_mag_std
 
 
