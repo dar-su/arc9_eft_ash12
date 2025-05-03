@@ -6,17 +6,17 @@ SWEP.Spawnable = true
 ------------------------- |||           Trivia            ||| -------------------------
 
 SWEP.PrintName = ARC9:GetPhrase("eft_weapon_ash12")
-SWEP.Description = [[The ASh-12.7 (Avtomat Shturmovoy 12 - "Assault Automatic Rifle 12") bullpup assault rifle is a dedicated CQB/Urban Operations weapon, developed by TsKIB SOO ("Central Design and Research Bureau of Sporting and Hunting Arms"), a subsidiary of the KBP Instrument Design Bureau of Tula, Russia, by request from the Russian FSB (Federal Security Service). The weapon was designed with extreme short-range stopping power in mind for FSB urban combat units.]]
+SWEP.Description = "eft_weapon_ash12_desc"
 
-SWEP.Class = ARC9:GetPhrase("eft_class_weapon_ar")
+SWEP.Class = "eft_class_weapon_ar"
 SWEP.SubCategory = ARC9:GetPhrase("eft_subcat_ar")
 
 SWEP.Trivia = {
-    [ARC9:GetPhrase("eft_trivia_manuf") .. "1"] = ARC9:GetPhrase("KBP Instrument Design Bureau"),
-    [ARC9:GetPhrase("eft_trivia_cal") .. "2"] = "12.7x55",
-    [ARC9:GetPhrase("eft_trivia_act") .. "3"]= ARC9:GetPhrase("eft_trivia_act_blow"),
-    [ARC9:GetPhrase("eft_trivia_country") .. "4"] = ARC9:GetPhrase("eft_trivia_country_rus"),
-    [ARC9:GetPhrase("eft_trivia_year") .. "5"] = "2010"
+    ["eft_trivia_manuf1"] = "eft_trivia_manuf_kbp",
+    ["eft_trivia_cal2"] = "eft_trivia_calibr_127x55",
+    ["eft_trivia_act3"]= "eft_trivia_act_blow",
+    ["eft_trivia_country4"] = "eft_trivia_country_rus",
+    ["eft_trivia_year5"] = "2010"
 }
 
 SWEP.StandardPresets = false 

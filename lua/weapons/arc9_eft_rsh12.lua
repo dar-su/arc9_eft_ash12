@@ -6,17 +6,17 @@ SWEP.Spawnable = true
 ------------------------- |||           Trivia            ||| -------------------------
 
 SWEP.PrintName = ARC9:GetPhrase("eft_weapon_rsh12")
-SWEP.Description = [[The powerful RSh-12 (Revolver Shturmovoy 12 - "Assault Revolver 12") revolver, manufactured by KBP Instrument Design Bureau, designed for use by special forces. Despite the powerful 12.7x55 mm caliber, RSh-12 has less recoil than many other large-caliber revolvers and pistols, since the shot is fired from the bottom chamber of the cylinder.]]
+SWEP.Description = "eft_weapon_rsh12_desc"
 
-SWEP.Class = ARC9:GetPhrase("eft_class_weapon_revol")
+SWEP.Class = "eft_class_weapon_revol"
 SWEP.SubCategory = ARC9:GetPhrase("eft_subcat_pist")
 
 SWEP.Trivia = {
-    [ARC9:GetPhrase("eft_trivia_manuf") .. "1"] = ARC9:GetPhrase("eft_trivia_manuf_kbp"),
-    [ARC9:GetPhrase("eft_trivia_cal") .. "2"] = "12.7x55",
-    [ARC9:GetPhrase("eft_trivia_act") .. "3"]= ARC9:GetPhrase("eft_trivia_act_blow"),
-    [ARC9:GetPhrase("eft_trivia_country") .. "4"] = ARC9:GetPhrase("eft_trivia_country_rus"),
-    [ARC9:GetPhrase("eft_trivia_year") .. "5"] = "2000"
+    ["eft_trivia_manuf1"] = "eft_trivia_manuf_kbp",
+    ["eft_trivia_cal2"] = "eft_trivia_calibr_127x55",
+    ["eft_trivia_act3"]= "eft_trivia_act_revolver",
+    ["eft_trivia_country4"] = "eft_trivia_country_rus",
+    ["eft_trivia_year5"] = "2000"
 }
 
 SWEP.StandardPresets = false 
