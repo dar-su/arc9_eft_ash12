@@ -274,11 +274,11 @@ ATT.MenuCategory = "ARC9 - EFT Attachments"
 ATT.Category = {"eft_ash12_hg"}
 ATT.Attachments = {
     {
-        PrintName = "Grip",
+        PrintName = "eft_cat_foregrip",
         Category = {"eft_foregrip_small", "eft_foregrip_medium", "eft_foregrip_large"},
         Pos = Vector(0, 0, 0.75),
         Ang = Angle(0, 0, 0),
-        Icon_Offset = Vector(0, 0, 0),
+        Icon_Offset = Vector(-1, 0, 0.75),
     },
 }
 
@@ -443,7 +443,7 @@ ATT.Sights = {
 
 ATT.Attachments = {
     {
-        PrintName = "Optic",
+        PrintName = "eft_cat_scope",
         Category = {"eft_optic_large", "eft_optic_small", "eft_optic_medium"},
         Pos = Vector(-0.2, 0, -1.7),
         Ang = Angle(0, 0, 0),

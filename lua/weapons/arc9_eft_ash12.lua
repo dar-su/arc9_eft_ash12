@@ -850,16 +850,16 @@ end
 
 SWEP.Attachments = {
     {
-        PrintName = "Muzzle",
+        PrintName = "eft_cat_muzzle",
         Category = "eft_ash12_muzzle",
         Bone = "mod_muzzle",
         Installed = "eft_ash12_muzzle_std",
         Pos = Vector(0, 0.1, 0),
         Ang = Angle(0, -90, 0),
-        Icon_Offset = Vector(0, 0, 0),
+        Icon_Offset = Vector(2, 0, 0),
     },
     {
-        PrintName = "Rear Sight",
+        PrintName = "eft_cat_rearsight",
         Category = {"eft_ar_rearsight", "eft_rearsight"},
         ExcludeElements = {"NoRS"},
         Bone = "mod_sight_rear",
@@ -868,7 +868,7 @@ SWEP.Attachments = {
         Icon_Offset = Vector(0, 0, 0),
     },
     {
-        PrintName = "Front Sight",
+        PrintName = "eft_cat_frontsight",
         Category = {"eft_ash12_fs", "eft_ar_frontsight", "eft_frontsight"},
         Bone = "mod_sight_front",
         Installed = "eft_ash12_fs_std",
@@ -877,7 +877,7 @@ SWEP.Attachments = {
         Icon_Offset = Vector(0, 0, 0),
     },
     {
-        PrintName = "Optic",
+        PrintName = "eft_cat_scope",
         Category = {"eft_as12_rs", "eft_optic_medium", "eft_optic_large", "eft_optic_small"},
         ExcludeElements = {"IronsBlockingSight"},
         Installed = "eft_ash12_rs_std",
@@ -887,7 +887,7 @@ SWEP.Attachments = {
         Icon_Offset = Vector(0, 0, 0),
     },
     {
-        PrintName = "Ammunition",
+        PrintName = "eft_cat_ammo",
         Category = "eft_ammo_12755",
         Bone = "mod_magazine",
         Integral = true,
@@ -896,7 +896,7 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
     },
     {
-        PrintName = "Magazine",
+        PrintName = "eft_cat_magazine",
         Category = "eft_ash12_mag",
         Bone = "mod_magazine",
         Installed = "eft_ash12_mag_10",
@@ -905,7 +905,7 @@ SWEP.Attachments = {
         Icon_Offset = Vector(-1, 0, 0),
     },
     {
-        PrintName = "Foregrip",
+        PrintName = "eft_cat_foregrip",
         Category = {"eft_ash12_hg", "eft_foregrip_small", "eft_foregrip_medium", "eft_foregrip_large"},
         Bone = "weapon",
         Installed = "eft_ash12_hg_std",
@@ -919,7 +919,7 @@ SWEP.Attachments = {
         Icon_Offset = Vector(0, 0, 0),
     },    
     {
-        PrintName = "R Tactical",
+        PrintName = "eft_cat_tactical_r",
         Category = {"eft_tactical", "eft_tactical_top", "eft_tactical_top_big"},
         Bone = "weapon",
         Pos = Vector(-1.35, 22.5, -0.5),
@@ -927,7 +927,7 @@ SWEP.Attachments = {
         Icon_Offset = Vector(0, 0, 1),
     },
     {
-        PrintName = "L Tactical",
+        PrintName = "eft_cat_tactical_l",
         Category = {"eft_tactical", "eft_tactical_top", "eft_tactical_top_big"},
         Bone = "weapon",
         Pos = Vector(1.35-0.2, 22.5, -0.5),
@@ -936,7 +936,7 @@ SWEP.Attachments = {
     },
     
     {
-        PrintName = "Custom slot",
+        PrintName = "eft_cat_custom",
         Category = {"eft_custom_slot", "eft_custom_slot_ash12"},
         RejectAttachments = {["eft_extras_camos"] = true}, -- we have real camo support
         Bone = "mod_sight_rear",
@@ -947,7 +947,7 @@ SWEP.Attachments = {
 
     -- shouldve been up there   but to not break presets this here
     {
-        PrintName = "Top Tactical",
+        PrintName = "eft_cat_tactical_u",
         Category = {"eft_tactical_top", "eft_tactical_top_big"},
         Bone = "mod_sight_front",
         Pos = Vector(0, -2.8, 0),
@@ -956,7 +956,7 @@ SWEP.Attachments = {
     },
 
     {
-        PrintName = "Camouflage 1",
+        PrintName = "eft_cat_camo1",
         Category = {"universal_camo"},
         Bone = "mod_sight_rear",
         Pos = Vector(0, -7, 1),
@@ -964,7 +964,7 @@ SWEP.Attachments = {
         IsAdvancedCamo1 = true,
     },
     {
-        PrintName = "Camouflage 2",
+        PrintName = "eft_cat_camo2",
         Category = {"universal_camo"},
         Bone = "mod_sight_rear",
         Pos = Vector(0, -8.5, 1),
@@ -972,7 +972,7 @@ SWEP.Attachments = {
         IsAdvancedCamo2 = true,
     },
     {
-        PrintName = "Camouflage 3",
+        PrintName = "eft_cat_camo3",
         Category = {"universal_camo"},
         Bone = "mod_sight_rear",
         Pos = Vector(0, -10, 1),

@@ -74,8 +74,8 @@ SWEP.EFTErgo = 40
 SWEP.BarrelLength = 18
 SWEP.Ammo = "357"
 SWEP.Firemodes = {
-    { Mode = 1, PrintName = "DOUBLE A.", PoseParam = 1, Spread = 0.005  },
-    { Mode = 1, PrintName = "SINGLE A.", PoseParam = 2, EFTSingleAction = true, ManualAction = true, RPM = 300, TriggerDelay = false, TriggerStartFireAnim = false, RecoilKickMult = 0.75 },
+    { Mode = 1, PrintName = "eft_fmode_doubleaction", PoseParam = 1, Spread = 0.005  },
+    { Mode = 1, PrintName = "eft_fmode_singleaction", PoseParam = 2, EFTSingleAction = true, ManualAction = true, RPM = 300, TriggerDelay = false, TriggerStartFireAnim = false, RecoilKickMult = 0.75 },
 }
 
 SWEP.Slot = 1
@@ -772,7 +772,7 @@ SWEP.ExtraSightDistanceNoRT = true
 
 SWEP.Attachments = {
     {
-        PrintName = "Optic",
+        PrintName = "eft_cat_scope",
         Category = {"eft_optic_medium",  "eft_optic_small", "eft_mount_lobaev_only"},
         -- RejectAttachments = { ["eft_tactical_raptar"] = true },
         ExtraSightDistance = 8,
@@ -782,7 +782,7 @@ SWEP.Attachments = {
         Icon_Offset = Vector(0, 0, 0),
     },
     {
-        PrintName = "Ammunition",
+        PrintName = "eft_cat_ammo",
         Category = "eft_ammo_12755",
         Bone = "mod_magazine",
         Integral = true,
@@ -791,7 +791,7 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, 0),
     },
     {
-        PrintName = "Magazine",
+        PrintName = "eft_cat_magazine",
         Category = "eft_rsh12_mag",
         Bone = "mod_magazine",
         Installed = "eft_rsh12_mag_std",
@@ -800,7 +800,7 @@ SWEP.Attachments = {
         Icon_Offset = Vector(0, 0, 0),
     },
     {
-        PrintName = "Pistol grip",
+        PrintName = "eft_cat_pgrip",
         Category = "eft_rsh12_pgrip",
         Bone = "mod_pistol_grip",
         Installed = "eft_rsh12_pgrip_std",
@@ -809,7 +809,7 @@ SWEP.Attachments = {
         Icon_Offset = Vector(0, 0, 0),
     },
     {
-        PrintName = "Tactical",
+        PrintName = "eft_cat_tactical",
         Category = {"eft_tactical", "eft_tactical_top", "eft_tactical_top_big", "eft_rsh12_tacticalslot", "eft_bipod"},
         RejectAttachments = { ["eft_tactical_raptar"] = true },
         Bone = "mod_tactical",
@@ -819,10 +819,10 @@ SWEP.Attachments = {
     },
     
     {
-        PrintName = "Custom slot",
+        PrintName = "eft_cat_custom",
         Category = {"eft_custom_slot", "eft_custom_slot_revolver", "eft_custom_slot_rsh12"}, -- , "eft_ak_gp34"
-        Bone = "weapon",
-        Pos = Vector(0, 26.5, 0.2),
+        Bone = "mod_pistol_grip",
+        Pos = Vector(0, -1.75, 3),
         Ang = Angle(0, 90, 0),
         Icon_Offset = Vector(0, 0, 0),
         -- CosmeticOnly = true,
