@@ -31,7 +31,7 @@ SWEP.WorldModelOffset = {
     Pos = Vector(-11.5, 5.5, -4.3),
     Ang = Angle(-11, 0, 180),
     TPIKPos = Vector(-5, 5, -4), -- rpg
-    TPIKAng = Angle(-5, 0, 180),
+    TPIKAng = Angle(-11.5, 0, 180),
     Scale = 1
 }
 SWEP.IronSights = {
